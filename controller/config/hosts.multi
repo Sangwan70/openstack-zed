@@ -1,0 +1,11 @@
+#------------------------------------------------------------------------------
+# Managed by Ram N Sangwan (www.rnsangwan.com) Visit www.theskillpedia.com for complete course
+#------------------------------------------------------------------------------
+# controller
+10.0.0.11       controller
+
+# compute
+10.0.0.31       compute
+
+# storage
+10.0.0.41       storage

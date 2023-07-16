@@ -1,0 +1,22 @@
+# Node VM configuration. Used by stack/wbatch (host and guest).
+
+# Port forwarding
+# ssh access to compute1: 127.0.0.1:2232
+VM_SSH_PORT=2232
+
+# Assign network interfaces to networks
+NET_IF_0=dhcp
+#------------------------------------------------------------------------------
+# Mgmt network (elevate interface boot priority to 1; set when PXE booting)
+NET_IF_1="static 10.0.0.31 1"
+# Public network (select network, IP address configured manually)
+NET_IF_2="manual 203.0.113.0"
+
+#------------------------------------------------------------------------------
+# Size of second disk in MB (/dev/sdb)
+# Test volume is 1 GB; backing volume must be bigger
+SECOND_DISK_SIZE=1280
+
+#------------------------------------------------------------------------------
+VM_MEM=1024
+

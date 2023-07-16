@@ -1,0 +1,49 @@
+# This file contains OpenStack configuration data. 
+# zed                (production release; cloud-archive:train)
+# yoga                 (pre-release testing: cloud-archive:train-proposed)
+: ${OPENSTACK_RELEASE:=zed}
+
+# CirrOS image URL
+if [ "$(uname -m)" = "x86_64" ]; then
+    arch=x86_64
+else
+    arch=i386
+fi
+CIRROS_URL="http://download.cirros-cloud.net/0.6.2/cirros-0.6.2-$arch-disk.img"
+unset arch
+
+# Name used for CirrOS image in glance
+CIRROS_IMG_NAME="cirros"
+
+#------------------------------------------------------------------------------
+
+# Networks used by OpenStack setup
+NETWORK_1="mgmt 10.0.0.0"
+NETWORK_2="provider 203.0.113.0"
+
+# Static IP used temporarily by PXE booted machines before being reconfigured
+# by stack
+PXE_INITIAL_NODE_IP="10.0.0.240"
+
+#------------------------------------------------------------------------------
+
+# Public network
+: ${PROVIDER_NETWORK_CIDR:=203.0.113.0/24}
+: ${PROVIDER_NETWORK_GATEWAY:=203.0.113.1}
+# Floating IP addresses
+: ${START_IP_ADDRESS:=203.0.113.101}
+: ${END_IP_ADDRESS:=203.0.113.200}
+
+#------------------------------------------------------------------------------
+
+# Private demo network
+: ${SELFSERVICE_NETWORK_CIDR:=172.16.1.0/24}
+: ${SELFSERVICE_NETWORK_GATEWAY:=172.16.1.1}
+
+# DNS name server used by instance VMs.
+# Default is Google Public DNS (8.8.4.4).
+: ${DNS_RESOLVER:=8.8.4.4}
+
+: ${REGION:=RegionOne}
+
+# vim: set ai ts=4 sw=4 et ft=sh:

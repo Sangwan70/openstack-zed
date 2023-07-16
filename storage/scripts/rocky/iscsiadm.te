@@ -1,0 +1,9 @@
+module iscsiadm 1.0;
+
+require {
+        type iscsid_t;
+        class capability dac_override;
+}
+
+#============= iscsid_t ==============
+allow iscsid_t self:capability dac_override;

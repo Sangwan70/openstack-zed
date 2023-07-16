@@ -1,0 +1,3 @@
+# VirtualBox NAT -- for Internet access to VM
+auto %IF_NAME%
+iface %IF_NAME% inet dhcp

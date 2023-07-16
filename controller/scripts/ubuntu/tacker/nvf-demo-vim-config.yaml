@@ -1,0 +1,6 @@
+auth_url: http://10.0.0.11:5000/v3/
+username: nfv_user
+password: nfv_user_secret
+project_name: nfv
+project_domain_name: Default
+user_domain_name: Default
