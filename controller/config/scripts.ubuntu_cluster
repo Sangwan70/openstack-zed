@@ -1,50 +1,38 @@
 #==============================================================================
 # Scripts for controller node
-cmd create_node -n controller
-cmd queue_renamed -n controller stack/init_xxx_node.sh
-
 cmd queue etc_hosts.sh
 cmd queue stack/enable_stack_ssh_keys.sh
 cmd queue stack/copy_openrc.sh
-cmd snapshot_cycle -n controller controller_node_init
 
 # Environment
 cmd queue ubuntu/apt_install_mysql.sh
 cmd queue ubuntu/install_rabbitmq.sh
 cmd queue ubuntu/install_memcached.sh
-cmd snapshot_cycle -n controller pre-openstack_installed
 
 # Identity
 cmd queue ubuntu/setup_keystone.sh
 cmd queue test/get_auth_token.sh
-cmd snapshot_cycle -n controller keystone_installed
 
 # Image
 cmd queue ubuntu/setup_glance.sh
-cmd snapshot_cycle -n controller glance_installed
 
 # Compute
 cmd queue ubuntu/setup_placement_controller.sh
 cmd queue ubuntu/setup_nova_controller.sh
-cmd snapshot_cycle -n controller nova-controller_installed
 
 # Networking
 cmd queue ubuntu/setup_neutron_controller.sh
 cmd queue ubuntu/setup_self-service_controller.sh
 cmd queue ubuntu/setup_neutron_controller_part_2.sh
-cmd snapshot_cycle -n controller neutron-controller_installed
 
 # Dashboard
 cmd queue ubuntu/setup_horizon.sh
-cmd snapshot_cycle -n controller horizon_installed
 
 # Block Storage
 cmd queue ubuntu/setup_cinder_controller.sh
-cmd snapshot_cycle -n controller cinder_installed
 
 # Orchestration
 cmd queue ubuntu/setup_heat_controller.sh
-cmd snapshot_cycle -n controller heat_controller_installed
 
 cmd boot -n controller
 #==============================================================================

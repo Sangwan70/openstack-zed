@@ -6,6 +6,7 @@ TOP_DIR=$(cd $(cat "../TOP_DIR" 2>/dev/null||echo $(dirname "$0"))/.. && pwd)
 
 source "$TOP_DIR/config/paths"
 source "$CONFIG_DIR/credentials"
+source "$CONFIG_DIR/openstack"
 source "$LIB_DIR/functions.guest.sh"
 
 exec_logfile
@@ -107,7 +108,7 @@ sudo systemctl restart apache2
 #------------------------------------------------------------------------------
 
 echo "Sourcing the admin credentials."
-source "$CONFIG_DIR/admin-opensrc.sh"
+source "$CONFIG_DIR/admin-openstackrc.sh"
 
 # Wait for keystone to come up
 wait_for_keystone

@@ -1,7 +1,7 @@
 # This file contains OpenStack configuration data. 
 # zed                (production release; cloud-archive:train)
 # yoga                 (pre-release testing: cloud-archive:train-proposed)
-: ${OPENSTACK_RELEASE:=zed}
+: ${OPENSTACK_RELEASE:=wallaby}
 
 # CirrOS image URL
 if [ "$(uname -m)" = "x86_64" ]; then

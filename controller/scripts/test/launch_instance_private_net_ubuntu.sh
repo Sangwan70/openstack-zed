@@ -324,7 +324,6 @@ openstack security group show default
 
 #------------------------------------------------------------------------------
 # Launch an instance on the self-service network
-# https://docs.openstack.org/install-guide/launch-instance-selfservice.html
 #------------------------------------------------------------------------------
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

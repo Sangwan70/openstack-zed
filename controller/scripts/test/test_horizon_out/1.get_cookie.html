@@ -1,0 +1,378 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    <meta content='IE=edge' http-equiv='X-UA-Compatible' />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+      
+
+    
+    <title>Login - OpenStack Dashboard</title>
+    
+    
+      
+
+
+<link rel="stylesheet" href="/horizon/static/dashboard/css/output.b597bc3299cf.css" type="text/css" media="screen">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/horizon/static/dashboard/css/output.dda64bd4effe.css" type="text/css">
+
+
+<link rel="shortcut icon" href="/horizon/static/dashboard/img/favicon.ico"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/horizon/static/dashboard/img/apple-touch-icon.png" />
+<link rel="mask-icon" href="/horizon/static/dashboard/img/safari-pinned-tab.svg" color="#5bbad5" />
+
+    
+    
+  <style id="anti-clickjack">body{display:none !important;}</style>
+
+  <script type='text/javascript' charset="utf-8">
+    if (self === top) {
+      var antiClickjack = document.getElementById("anti-clickjack");
+      antiClickjack.parentNode.removeChild(antiClickjack);
+    } else {
+      top.location = self.location;
+    }
+  </script>
+
+
+    
+
+
+
+
+
+<script src="/horizon/static/dashboard/js/output.d99d3c24731c.js"></script>
+
+<script type='text/javascript' charset='utf-8'>
+  (function (global) {
+    'use strict';
+
+    // make translation info available on client
+    horizon.languageCode = 'en';
+    horizon.languageBidi = 'False';
+    horizon.datepickerLocale = 'en';
+
+    /* Load angular modules extensions list before we include angular/horizon.js */
+    global.horizonPlugInModules = ['horizon.dashboard.project', 'horizon.dashboard.identity'];
+
+    /* Storage for backend configuration variables which the frontend
+     * should be aware of.
+     */
+    var conf = horizon.conf;
+    conf.static_url = "/horizon/static/";
+    conf.ajax = {
+      queue_limit: 10
+    };
+    conf.auto_fade_alerts = {
+      delay: 3000,
+      fade_duration: 1500,
+      types: ['alert-success', 'alert-info']
+    };
+    conf.disable_password_reveal =
+      false;
+
+  })(this);
+</script>
+
+    <script type="text/javascript" charset="utf-8">
+  /*
+    Added so that we can append Horizon scoped JS events to
+    the DOM load events without running in to the "horizon"
+    name-space not currently being defined since we load the
+    scripts at the bottom of the page.
+  */
+  var addHorizonLoadEvent = function(func) {
+    var old_onload = window.onload;
+
+    if (typeof window.onload != 'function') {
+      window.onload = func;
+    } else {
+      window.onload = function() {
+        old_onload();
+        func();
+      }
+    }
+  }
+</script>
+
+    
+      
+
+    
+     
+  </head>
+  <body id="splash" ng-app='horizon.app' ng-strict-di>
+    <noscript>
+      <div class="alert alert-danger text-center javascript-disabled">
+        This application requires JavaScript to be enabled in your web browser.
+      </div>
+    </noscript>
+    
+  
+
+
+  
+
+
+  <div class="container login">
+    <div class="row">
+      <div class="col-xs-11 col-sm-8 col-md-6 col-lg-5 horizontal-center">
+        
+<form id="" class="ng-pristine ng-valid ng-scope"
+      method="POST"
+      action="/horizon/auth/login/"
+      autocomplete="off"
+      ng-controller="hzLoginController">
+  <input type="hidden" name="csrfmiddlewaretoken" value="gRNWN5sJqGGwGy3kU3tJiVG3Z12hrUyygbpFZ8Ri619qRrGdmhgxrW33coRPI2hw">
+
+
+
+  <div class="panel panel-default">
+
+    <div class="panel-heading">
+    
+  
+
+<div class="text-center">
+  <img class="splash-logo" src=/horizon/static/dashboard/img/logo-splash.svg>
+</div>
+
+  
+      <h3 class="login-title">
+        Log in
+      </h3>
+    
+
+    </div>
+
+    <div class="panel-body">
+    
+      
+      
+        <div class="fake_credentials" style="display: none">
+          <input type="text" name="fake_email" value="" autocomplete="new-password"/>
+          <input type="password" name="fake_password" value="" autocomplete="new-password"/>
+        </div>
+      
+      
+      <fieldset hz-login-finder>
+        
+        
+        
+        
+        
+  <input type="hidden" name="region" value="default" id="id_region">
+
+
+
+
+
+  
+
+<div class="form-group required">
+  
+    
+      <label class="control-label  required" for="id_username">
+          <span class="field-label">User Name</span></label>
+      <span class="hz-icon-required fa fa-asterisk"></span>
+
+
+
+    
+
+    <div class=" ">
+      
+      
+        
+          <input type="text" name="username" autofocus="autofocus" maxlength="255" class="form-control" id="id_username">
+        
+      
+      
+    </div>
+  
+  
+</div>
+
+
+  
+
+<div class="form-group required">
+  
+    
+      <label class="control-label  required" for="id_password">
+          <span class="field-label">Password</span></label>
+      <span class="hz-icon-required fa fa-asterisk"></span>
+
+
+
+    
+
+    <div class=" ">
+      
+      
+        
+          <input type="password" name="password" class="form-control" id="id_password">
+        
+      
+      
+    </div>
+  
+  
+</div>
+
+
+  
+
+<div class="form-group required">
+  
+    
+      <label class="control-label  required" for="id_domain">
+          <span class="field-label">Domain</span></label>
+      <span class="hz-icon-required fa fa-asterisk"></span>
+
+
+
+    
+
+    <div class=" ">
+      
+      
+        
+          <input type="text" name="domain" class="form-control" id="id_domain">
+        
+      
+      
+    </div>
+  
+  
+</div>
+
+
+
+      </fieldset>
+    
+    </div>
+
+    <div class="panel-footer">
+      
+  
+        <button id="loginBtn" type="submit" class="btn btn-primary pull-right">
+          <span>Sign In</span>
+        </button>
+        <div class="clearfix"></div>
+      
+  
+
+
+    </div>
+  </div>
+
+
+      
+</form>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+    <div id="footer">
+      
+  
+
+
+    </div>
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="/horizon/i18n/js/horizon+openstack_dashboard/"></script>
+
+
+
+<script src="/horizon/static/dashboard/js/output.e1e7ec194ab9.js"></script>
+
+<script src="/horizon/static/dashboard/js/angular_template_cache_preloads.b49528e82402.js"></script>
+
+
+
+
+<script type="text/html" id="modal_template"><div class="modal" data-backdrop="{{modal_backdrop}}"><div class="modal-dialog"><div class="modal-content"><div class='modal-header'><a class='close' data-dismiss='modal' href="#"><span class="fa fa-times"></span></a><h3 class="modal-title">{{title}}</h3></div><div class='modal-body'>
+        {{{body}}}
+      </div><div class='modal-footer'><a href='#' class='btn btn-default cancel' data-dismiss='modal'>{{cancel}}</a><a href='#' class='btn {{confirmCssClass}}'>{{confirm}}</a></div></div></div></div></script>
+
+<script type="text/html" id="empty_row_template"><tr class="odd empty"><td colspan="{{colspan}}">{{no_items_label}}</td></tr></script>
+
+<script type="text/html" id="alert_message_template"><div class="alert alert-dismissable fade in alert-{{type}}"><a class="close" data-dismiss="alert" href="#"><span class="fa fa-times"></span></a><p><strong>{{type_display}}</strong>
+    {{#safe}}
+      {{{message}}}
+    {{/safe}}
+    {{^safe}}
+      {{message}}
+      <a id="details_link" href="#message_details"  data-toggle="collapse"
+         data-target="#message_details_{{id}}">Details</a><div id="message_details_{{id}}" class="collapse">
+      {{details}}
+      </div>
+    {{/safe}}
+  </p></div></script>
+
+<script type="text/html" id="loader-modal"><div class="modal loading"><div class="modal-dialog modal-xs"><div class="modal-content"><div class="modal-body"><span class="loader fa fa-spinner fa-spin fa-5x text-center"></span><div class="loader-caption h4 text-center">{{text}}&hellip;</div></div></div></div></div></script>
+
+<script type="text/html" id="loader-inline"><div class="loader-inline"><span class="loader fa fa-spinner fa-spin fa-4x text-center"></span><div class="loader-caption h4 text-center">{{text}}&hellip;</div></div></script>
+
+<script type="text/html" id="membership_template"><ul class="nav nav-pills btn-group btn-group-sm"><li class="member" data-{{step_slug}}-id="{{data_id}}"><span class="display_name">{{display_name}}</span></li><li class="active"><a class="btn btn-primary" href="#add_remove">{{text}}</a></li><li class="dropdown role_options"><a class="dropdown-toggle btn btn-default" data-toggle="dropdown" href="#"><span class="roles_display">{{roles_label}}</span><span class="fa fa-caret-down"></span></a><ul class="dropdown-menu dropdown-menu-right role_dropdown">
+      {{#roles}}
+      <li data-role-id="{{role_id}}"><a target="_blank"><span class="fa fa-check"></span>
+          {{role_name}}
+        </a></li>
+      {{/roles}}
+    </ul></li></ul></script>
+
+<script type="text/html" id="confirm_modal"><div class="confirm-wrapper"><span class="confirm-list" style="word-wrap: break-word; word-break: normal;">
+      You have selected: {{selection}}. 
+    </span><span class="confirm-text">Please confirm your selection. </span><span class="confirm-help">{{help}}</span></div></script>
+
+<script type="text/html" id="progress-modal"><div class="modal loading"><div class="modal-dialog modal-sm"><div class="modal-content"><div class="modal-body"><div class="modal-progress-loader"><div class="progress-text"><div class="progress"><div class="progress-bar " role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div></div><span class="progress-bar-text">0%</span></div><div class="progress-label text-center h4">{{text}}</div></div></div></div></div></div></script>
+
+
+
+
+
+
+<script>
+  // Call init on DOM ready.
+  $(document).ready(horizon.init);
+</script>
+
+    
+    <div id="modal_wrapper"></div>
+  </body>
+</html>
+<!-- T991ALW4gLNxBeZ74WZLYKn -->

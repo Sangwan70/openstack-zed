@@ -35,16 +35,6 @@ echo "Configuring LVM physical and logical volumes."
 
 cinder_dev=sdb
 
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# Not in install-guide
-# Avoid error due to service not running
-# XXX Alternatively, in /etc/lvm/lvm.conf, set use_lvmetad = 0
-sudo systemctl enable lvm2-lvmetad.service
-sudo systemctl enable lvm2-lvmetad.socket
-sudo systemctl start lvm2-lvmetad.service
-sudo systemctl start lvm2-lvmetad.socket
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 sudo pvcreate /dev/$cinder_dev
 sudo vgcreate cinder-volumes /dev/$cinder_dev
 
@@ -117,7 +107,6 @@ sudo service cinder-volume restart
 
 #------------------------------------------------------------------------------
 # Verify Cinder operation
-# https://docs.openstack.org/cinder/train/install/cinder-verify.html
 #------------------------------------------------------------------------------
 
 echo "Verifying Block Storage installation on controller node."
@@ -179,8 +168,6 @@ check_cinder_services
 
 #------------------------------------------------------------------------------
 # Verify the Block Storage installation
-# https://docs.openstack.org/install-guide/launch-instance-cinder.html
-# (partial implementation without instance)
 #------------------------------------------------------------------------------
 
 echo "Sourcing the demo credentials."

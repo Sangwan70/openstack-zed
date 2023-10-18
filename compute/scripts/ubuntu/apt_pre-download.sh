@@ -29,7 +29,7 @@ apt_download lvm2 cinder-volume thin-provisioning-tools
 apt_download nova-compute nova-compute-qemu qemu sysfsutils
 
 # Neutron Compute
-apt_download neutron-linuxbridge-agent python3-neutron-fwaas
+apt_download neutron-linuxbridge-agent
 
 # Heat
 apt_download heat-api heat-api-cfn heat-engine python3-heatclient

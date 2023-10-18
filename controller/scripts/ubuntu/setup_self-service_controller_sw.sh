@@ -17,16 +17,6 @@ indicate_current_auto
 # Networking Option 2: Self-service networks
 #------------------------------------------------------------------------------
 
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# Install the components
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-echo "Installing additional packages for self-service networks."
-sudo apt install -y \
-    neutron-server neutron-plugin-ml2 \
-    neutron-linuxbridge-agent neutron-l3-agent neutron-dhcp-agent \
-    neutron-metadata-agent python3-neutron-fwaas
-
 echo "Configuring neutron for controller node."
 function get_database_url {
     local db_user=$NEUTRON_DB_USER
