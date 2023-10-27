@@ -109,8 +109,6 @@ echo "Adding the private network subnet as an interface on the router."
 openstack router add subnet router selfservice
 )
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# Not in install-guide:
-
 # The following tests for router namespace, qr-* interface and bridges are just
 # for show. They are not needed to prevent races.
 
@@ -119,16 +117,17 @@ until ip netns | grep qrouter; do
     echo -n "."
     sleep 1
 done
-export nsrouter=$(ip netns | grep qrouter)
+
+export nsrouter=$(ip netns | grep qrouter | awk '{print $1}')
+
 echo "$nsrouter Router Found "
 
 echo -n "Waiting for interface qr-* in router namespace."
-# until sudo ip netns exec $nsrouter ip a|grep -Po "(?<=: )qr-.*(?=:)" ; do
-# sudo ip netns exec $nsrouter ip a|grep -Po "(?<=: )qr-.*(?=:)"
+until sudo ip netns exec $nsrouter ip a|grep -Po "(?<=: )qr-.*(?=:)" ; do
+    echo -n "."
+    sleep 1
+done
 
-#    echo -n "."
-#    sleep 1
-# done
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 (
 source "$CONFIG_DIR/demo-openstackrc.sh"
@@ -136,16 +135,14 @@ source "$CONFIG_DIR/demo-openstackrc.sh"
 echo "Setting a gateway on the public network on the router."
 openstack router set router --external-gateway provider
 )
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# Not in install-guide:
 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # The following test for qg-* is just for show.
 echo -n "Waiting for interface qg-* in router namespace."
-# until sudo ip netns exec "$nsrouter" ip addr|grep -Po "(?<=: )qg-.*(?=:)"; do
-# sudo ip netns exec "$nsrouter" ip addr|grep -Po "(?<=: )qg-.*(?=:)"
-#    echo -n "."
-#sleep 1
-# done
+until sudo ip netns exec "$nsrouter" ip addr|grep -Po "(?<=: )qg-.*(?=:)"; do
+   echo -n "."
+   sleep 1
+done
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Verify operation

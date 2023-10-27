@@ -15,15 +15,10 @@ indicate_current_auto
 # Set up OpenStack Dashboard (horizon)
 #------------------------------------------------------------------------------
 
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# Install and configure components
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 echo "Installing horizon."
-sudo apt install -y openstack-dashboard
-
+sudo apt install -y -o DPkg::options::=--force-confmiss --reinstall openstack-dashboard
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# Edit the /etc/openstack-dashboard/local_settings.py file.
+
 conf=/etc/openstack-dashboard/local_settings.py
 auth_host=controller
 
@@ -41,6 +36,7 @@ sudo sed -i "/LOCATION/ s/127.0.0.1/controller/" $conf
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 echo "Comparing $conf to memcached.conf."
 memcached_conf=/etc/memcached.conf
+
 # Port is a number on line starting with "-p "
 port=$(grep -Po -- '(?<=^-p )\d+' $memcached_conf)
 

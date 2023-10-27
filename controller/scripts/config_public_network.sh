@@ -24,7 +24,7 @@ function wait_for_agent {
     echo -n "Waiting for neutron agent $agent."
     (
     source "$CONFIG_DIR/admin-openstackrc.sh"
-    while openstack network agent-list|grep "$agent"|grep "XXX" >/dev/null; do
+    while openstack network agent-list|grep "$agent"|grep "UP" >/dev/null; do
         sleep 1
         echo -n .
     done

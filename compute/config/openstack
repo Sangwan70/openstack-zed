@@ -9,7 +9,7 @@ if [ "$(uname -m)" = "x86_64" ]; then
 else
     arch=i386
 fi
-CIRROS_URL="http://download.cirros-cloud.net/0.6.2/cirros-0.6.2-$arch-disk.img"
+CIRROS_URL="http://download.cirros-cloud.net/0.5.3/cirros-0.5.3-$arch-disk.img"
 unset arch
 
 # Name used for CirrOS image in glance
@@ -18,12 +18,13 @@ CIRROS_IMG_NAME="cirros"
 #------------------------------------------------------------------------------
 
 # Networks used by OpenStack setup
-NETWORK_1="mgmt 10.0.0.0"
+NETWORK_0="intrnl 10.10.0.0"
+NETWORK_1="mgmt 10.10.1.0"
 NETWORK_2="provider 203.0.113.0"
 
 # Static IP used temporarily by PXE booted machines before being reconfigured
 # by stack
-PXE_INITIAL_NODE_IP="10.0.0.240"
+PXE_INITIAL_NODE_IP="10.10.1.240"
 
 #------------------------------------------------------------------------------
 

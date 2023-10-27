@@ -1,11 +1,9 @@
 #==============================================================================
 # Scripts for controller node
 cmd queue etc_hosts.sh
-cmd queue stack/enable_stack_ssh_keys.sh
-cmd queue stack/copy_openrc.sh
 
 # Environment
-cmd queue ubuntu/apt_install_mysql.sh
+cmd queue ubuntu/install_mysql.sh
 cmd queue ubuntu/install_rabbitmq.sh
 cmd queue ubuntu/install_memcached.sh
 
@@ -37,47 +35,24 @@ cmd queue ubuntu/setup_heat_controller.sh
 cmd boot -n controller
 #==============================================================================
 # Scripts for compute node
-cmd create_node -n compute
-cmd queue_renamed -n compute stack/init_xxx_node.sh
-
-cmd queue etc_hosts.sh
-cmd queue stack/enable_stack_ssh_keys.sh
-cmd queue stack/copy_openrc.sh
-cmd snapshot_cycle -n compute compute_node_init
 
 # Compute
 cmd queue ubuntu/setup_nova_compute.sh
-cmd snapshot_cycle -n compute nova-compute_installed
 
 # Networking
 cmd queue ubuntu/setup_neutron_compute.sh
 cmd queue ubuntu/setup_self-service_compute.sh
 cmd queue ubuntu/setup_neutron_compute_part_2.sh
-cmd snapshot_cycle -n compute neutron-compute_installed
 
 # Block Storage
 cmd queue ubuntu/setup_cinder_volumes.sh
-cmd snapshot_cycle -n compute cinder-volume_installed
 
 cmd boot -n compute
 #==============================================================================
 # Create networks
-cmd shutdown -n controller
-cmd queue config_public_network.sh
 cmd queue config_private_network.sh
-cmd boot -n controller
 #==============================================================================
-# Always take snapshots of finished cluster
-cmd shutdown -n controller
-cmd shutdown -n compute
-cmd snapshot -n controller controller_-_cluster_installed
-cmd snapshot -n compute compute-_cluster_installed
 
-# Boot cluster nodes -- cluster is ready for use
-cmd boot -n compute
-
-# Enable extra services as needed:
-#
 #cmd queue ubuntu/barbican/setup_barbican_server.sh
 #
 #cmd queue ubuntu/mistral/setup_mistral_server.sh

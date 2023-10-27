@@ -24,13 +24,13 @@ sudo apt -y install etcd
 conf=/etc/default/etcd
 
 iniset_sudo $conf no_section ETCD_DATA_DIR "/var/lib/etcd/default.etcd"
-iniset_sudo $conf no_section ETCD_LISTEN_PEER_URLS "http://10.0.0.11:2380"
-iniset_sudo $conf no_section ETCD_LISTEN_CLIENT_URLS "http://10.0.0.11:2379"
+iniset_sudo $conf no_section ETCD_LISTEN_PEER_URLS "http://10.10.1.11:2380"
+iniset_sudo $conf no_section ETCD_LISTEN_CLIENT_URLS "http://10.10.1.11:2379"
 iniset_sudo $conf no_section ETCD_NAME "controller"
 #[Clustering]
-iniset_sudo $conf no_section ETCD_INITIAL_ADVERTISE_PEER_URLS "http://10.0.0.11:2380"
-iniset_sudo $conf no_section ETCD_ADVERTISE_CLIENT_URLS "http://10.0.0.11:2379"
-iniset_sudo $conf no_section ETCD_INITIAL_CLUSTER "controller http://10.0.0.11:2380"
+iniset_sudo $conf no_section ETCD_INITIAL_ADVERTISE_PEER_URLS "http://10.10.1.11:2380"
+iniset_sudo $conf no_section ETCD_ADVERTISE_CLIENT_URLS "http://10.10.1.11:2379"
+iniset_sudo $conf no_section ETCD_INITIAL_CLUSTER "controller=http://10.10.1.11:2380"
 iniset_sudo $conf no_section ETCD_INITIAL_CLUSTER_TOKEN "etcd-cluster-01"
 iniset_sudo $conf no_section ETCD_INITIAL_CLUSTER_STATE "new"
 

@@ -14,20 +14,15 @@ indicate_current_auto
 # Launch a demo instance.
 #------------------------------------------------------------------------------
 
-# Packets from the instance VM destined for the Internet will have its
-# floating IP address as the sender address. For your instance VM to
-# get Internet access, you will probably have to configure masquerading
-# on your host computer.
-
 # On Linux, turning on masquerading may look something like this:
 
 sudo echo "1" > sudo /proc/sys/net/ipv4/ip_forward
 sudo modprobe ip_tables
 sudo modprobe ip_conntrack
-sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
-sudo iptables -A FORWARD -i eth0 -o vboxnet2 -m state \
+sudo iptables -t nat -A POSTROUTING -o enp0s9 -j MASQUERADE
+sudo iptables -A FORWARD -i enp0s9 -o vboxnet2 -m state \
           --state RELATED,ESTABLISHED -j ACCEPT
-sudo iptables -A FORWARD -i vboxnet2 -o eth0 -j ACCEPT
+sudo iptables -A FORWARD -i vboxnet2 -o enp0s9 -j ACCEPT
 
 # Set this true if you have masquerading enabled to allow instance VMs access
 # to the Internet.
@@ -129,7 +124,7 @@ function wait_for_nova_compute {
             echo "SUM ERROR openstack-nova-compute on compute node has died."
             echo "Restarting openstack-nova-compute on compute node."
             ssh_no_chk_node compute \
-                sudo systemctl restart openstack-nova-compute
+                sudo systemctl restart nova-compute
             echo "SUM ERROR openstack-nova-compute restart in "
             wait_for_nova_compute
         fi
@@ -431,8 +426,8 @@ function request_instance {
 
     echo "Requesting an instance."
     openstack server create \
-        --flavor m1.nano \
-        --image "$CIRROS_IMG_NAME" \
+       --flavor m1.nano \
+       --image "$CIRROS_IMG_NAME" \
         --nic net-id="$PRIVATE_NET_ID" \
         --security-group default \
         --key-name mykey \
@@ -483,7 +478,7 @@ function status_409_fixed {
     if sudo comm -13 /tmp/nova-scheduler.log $NOVA_SCHED_LOG |
             grep "has not been heard from in a while"; then
         echo
-        echo "SUM ERROR Missing connection with openstack-nova-compute on compute node."
+        echo "SUM ERROR Missing connection with nova-compute on compute node."
         echo "(Did controller node boot after compute node?)"
         echo
     elif sudo comm -13 /tmp/nova-scheduler.log $NOVA_SCHED_LOG |
@@ -557,7 +552,7 @@ while : ; do
             echo "Deleting failed instance VM."
             openstack server delete "$DEMO_INSTANCE_NAME"
 
-            echo "Checking openstack-nova-compute on the compute node."
+            echo "Checking nova-compute on the compute node."
             wait_for_nova_compute
 
             echo -n "Requesting new instance VMs until it works."
@@ -572,7 +567,7 @@ while : ; do
                         echo "SUM ERROR console status remains 409."
                         echo "Restarting openstack-nova-compute on compute node."
                         ssh_no_chk_node compute \
-                            sudo systemctl restart openstack-nova-compute
+                            sudo systemctl restart nova-compute
                         echo "SUM ERROR nova-compute restart (status 409)"
                     fi
                     sleep 2
@@ -618,10 +613,10 @@ while : ; do
                 grep "Filter RetryFilter returned 0 hosts"; then
             echo "SUM ERROR RetryFilter returned 0 hosts"
             show_compute_resource_usage
-            echo "Restarting openstack-nova-compute on compute node."
+            echo "Restarting nova-compute on compute node."
             ssh_no_chk_node compute \
-                sudo systemctl restart  openstack-nova-compute
-            echo "SUM ERROR openstack-nova-compute restart (RetryFilter)"
+                sudo systemctl restart  nova-compute
+            echo "SUM ERROR nova-compute restart (RetryFilter)"
         fi
 
         echo "Deleting failed instance VM."
@@ -714,7 +709,7 @@ openstack server list
 
 echo
 echo -n "Verifying network connectivity to instance VM (may take 2+ min)."
-# Since Juno, the floating IP often takes a long time to become pingable.
+# The floating IP often takes a long time to become pingable.
 # Hopefully, this will be fixed, but for the time being we just ping the
 # floating IP until we get a reply (or we reach a time limit and give up).
 function patient_ping {
@@ -736,7 +731,7 @@ function patient_ping {
         fi
 
         # Abort if it takes too long
-        if [[ $cnt -gt 600 ]]; then
+        if [[ $cnt -gt 180 ]]; then
             echo
             echo "SUM ERROR no ping for instance VM in $cnt seconds. Aborting."
             exit 1
