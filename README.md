@@ -81,3 +81,9 @@ Back to controller node, execute the following script
 ```
 stack@controller:~/scripts/ubuntu$ ./setup_swift_controller_3.sh
 ```
+Create public network, private network and router
+```
+stack@controller:~/scripts/ubuntu$ cd ..
+stack@controller:~/scripts$ ./config_public_network.sh
+stack@controller:~/scripts$ ./config_private_network.sh
+```
