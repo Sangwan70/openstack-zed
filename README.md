@@ -49,6 +49,9 @@ stack@controller:~/scripts/ubuntu$ ./setup_cinder_controller_3.sh
 stack@controller:~/scripts/ubuntu$ ./setup_cinder_controller_4.sh 
 stack@controller:~/scripts/ubuntu$ ./setup_heat_controller_1.sh
 stack@controller:~/scripts/ubuntu$ ./setup_heat_controller_2.sh
+stack@controller:~/scripts/ubuntu$ ./setup_barbican_server_1.sh
+stack@controller:~/scripts/ubuntu$ ./setup_barbican_server_2.sh
+stack@controller:~/scripts/ubuntu$ ./setup_barbican_server_3.sh
 stack@controller:~/scripts/ubuntu$ ./setup_swift_controller_1.sh
 stack@controller:~/scripts/ubuntu$ ./setup_swift_controller_2.sh
 ```
