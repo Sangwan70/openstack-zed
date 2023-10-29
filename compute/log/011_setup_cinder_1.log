@@ -1,0 +1,135 @@
+Success. Node compute in mgmt: 10.10.1.31.
+IP address of this node's interface in management network: 10.10.1.31.
+Installing qemu support package for non-raw image types.
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 2 reinstalled, 0 to remove and 14 not upgraded.
+Need to get 252 kB of archives.
+After this operation, 0 B of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu jammy/universe amd64 tgt amd64 1:1.0.80-1ubuntu2 [238 kB]
+Get:2 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 qemu amd64 1:6.2+dfsg-2ubuntu6.15 [13.9 kB]
+Fetched 252 kB in 2s (149 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 91628 files and directories currently installed.)
+Preparing to unpack .../tgt_1%3a1.0.80-1ubuntu2_amd64.deb ...
+Unpacking tgt (1:1.0.80-1ubuntu2) over (1:1.0.80-1ubuntu2) ...
+Preparing to unpack .../qemu_1%3a6.2+dfsg-2ubuntu6.15_amd64.deb ...
+Unpacking qemu (1:6.2+dfsg-2ubuntu6.15) over (1:6.2+dfsg-2ubuntu6.15) ...
+Setting up qemu (1:6.2+dfsg-2ubuntu6.15) ...
+Setting up tgt (1:1.0.80-1ubuntu2) ...
+Processing triggers for man-db (2.10.2-1) ...
+Installing the supporting utility packages.
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 2 reinstalled, 0 to remove and 14 not upgraded.
+Need to get 1,580 kB of archives.
+After this operation, 0 B of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu jammy/main amd64 lvm2 amd64 2.03.11-2.1ubuntu4 [1,154 kB]
+Get:2 http://archive.ubuntu.com/ubuntu jammy/main amd64 thin-provisioning-tools amd64 0.9.0-2ubuntu1 [426 kB]
+Fetched 1,580 kB in 4s (437 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 91628 files and directories currently installed.)
+Preparing to unpack .../lvm2_2.03.11-2.1ubuntu4_amd64.deb ...
+Unpacking lvm2 (2.03.11-2.1ubuntu4) over (2.03.11-2.1ubuntu4) ...
+Preparing to unpack .../thin-provisioning-tools_0.9.0-2ubuntu1_amd64.deb ...
+Unpacking thin-provisioning-tools (0.9.0-2ubuntu1) over (0.9.0-2ubuntu1) ...
+Setting up lvm2 (2.03.11-2.1ubuntu4) ...
+update-initramfs: deferring update (trigger activated)
+Setting up thin-provisioning-tools (0.9.0-2ubuntu1) ...
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for initramfs-tools (0.140ubuntu13.4) ...
+update-initramfs: Generating /boot/initrd.img-5.15.0-87-lowlatency
+Installing cinder.
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  python3-cinder python3-configshell-fb python3-pyudev python3-rtslib-fb
+  python3-tabulate python3-urwid targetcli-fb
+Suggested packages:
+  python3-boto3 python3-botocore python3-googleapi python3-hp3parclient
+  python3-oauth2client python3-rados python3-rbd python3-zstd python-urwid-doc
+The following NEW packages will be installed:
+  cinder-volume python3-cinder python3-configshell-fb python3-pyudev
+  python3-rtslib-fb python3-tabulate python3-urwid targetcli-fb
+0 upgraded, 8 newly installed, 1 reinstalled, 0 to remove and 14 not upgraded.
+Need to get 3,014 kB of archives.
+After this operation, 28.5 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-urwid amd64 2.1.2-2build1 [171 kB]
+Get:2 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-configshell-fb all 1:1.1.28-2 [28.3 kB]
+Get:3 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-pyudev all 0.22.0-2 [33.2 kB]
+Get:4 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-rtslib-fb all 2.1.74-0ubuntu4 [49.8 kB]
+Get:5 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-tabulate all 0.8.9-0ubuntu1 [35.0 kB]
+Get:6 http://archive.ubuntu.com/ubuntu jammy/main amd64 targetcli-fb all 1:2.1.53-1ubuntu3 [40.3 kB]
+Get:7 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 cinder-common all 2:20.3.0-0ubuntu1 [7,784 B]
+Get:8 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 python3-cinder all 2:20.3.0-0ubuntu1 [2,643 kB]
+Get:9 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 cinder-volume all 2:20.3.0-0ubuntu1 [5,342 B]
+Fetched 3,014 kB in 2s (1,508 kB/s)
+Selecting previously unselected package python3-urwid.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 91628 files and directories currently installed.)
+Preparing to unpack .../0-python3-urwid_2.1.2-2build1_amd64.deb ...
+Unpacking python3-urwid (2.1.2-2build1) ...
+Selecting previously unselected package python3-configshell-fb.
+Preparing to unpack .../1-python3-configshell-fb_1%3a1.1.28-2_all.deb ...
+Unpacking python3-configshell-fb (1:1.1.28-2) ...
+Selecting previously unselected package python3-pyudev.
+Preparing to unpack .../2-python3-pyudev_0.22.0-2_all.deb ...
+Unpacking python3-pyudev (0.22.0-2) ...
+Selecting previously unselected package python3-rtslib-fb.
+Preparing to unpack .../3-python3-rtslib-fb_2.1.74-0ubuntu4_all.deb ...
+Unpacking python3-rtslib-fb (2.1.74-0ubuntu4) ...
+Selecting previously unselected package python3-tabulate.
+Preparing to unpack .../4-python3-tabulate_0.8.9-0ubuntu1_all.deb ...
+Unpacking python3-tabulate (0.8.9-0ubuntu1) ...
+Selecting previously unselected package targetcli-fb.
+Preparing to unpack .../5-targetcli-fb_1%3a2.1.53-1ubuntu3_all.deb ...
+Unpacking targetcli-fb (1:2.1.53-1ubuntu3) ...
+Preparing to unpack .../6-cinder-common_2%3a20.3.0-0ubuntu1_all.deb ...
+Unpacking cinder-common (2:20.3.0-0ubuntu1) over (2:20.3.0-0ubuntu1) ...
+Selecting previously unselected package python3-cinder.
+Preparing to unpack .../7-python3-cinder_2%3a20.3.0-0ubuntu1_all.deb ...
+Unpacking python3-cinder (2:20.3.0-0ubuntu1) ...
+Selecting previously unselected package cinder-volume.
+Preparing to unpack .../8-cinder-volume_2%3a20.3.0-0ubuntu1_all.deb ...
+Unpacking cinder-volume (2:20.3.0-0ubuntu1) ...
+Setting up python3-tabulate (0.8.9-0ubuntu1) ...
+Setting up python3-urwid (2.1.2-2build1) ...
+Setting up cinder-common (2:20.3.0-0ubuntu1) ...
+
+Configuration file '/etc/cinder/api-paste.ini', does not exist on system.
+Installing new config file as you requested.
+
+Configuration file '/etc/cinder/cinder.conf', does not exist on system.
+Installing new config file as you requested.
+
+Configuration file '/etc/cinder/logging.conf', does not exist on system.
+Installing new config file as you requested.
+
+Configuration file '/etc/cinder/resource_filters.json', does not exist on system.
+Installing new config file as you requested.
+
+Configuration file '/etc/cinder/rootwrap.conf', does not exist on system.
+Installing new config file as you requested.
+
+Configuration file '/etc/cinder/rootwrap.d/volume.filters', does not exist on system.
+Installing new config file as you requested.
+Setting up python3-configshell-fb (1:1.1.28-2) ...
+Setting up python3-pyudev (0.22.0-2) ...
+Setting up python3-rtslib-fb (2.1.74-0ubuntu4) ...
+Setting up python3-cinder (2:20.3.0-0ubuntu1) ...
+Setting up targetcli-fb (1:2.1.53-1ubuntu3) ...
+Setting up cinder-volume (2:20.3.0-0ubuntu1) ...
+
+Configuration file '/etc/init.d/cinder-volume', does not exist on system.
+Installing new config file as you requested.
+Created symlink /etc/systemd/system/multi-user.target.wants/cinder-volume.service → /lib/systemd/system/cinder-volume.service.
+Processing triggers for man-db (2.10.2-1) ...

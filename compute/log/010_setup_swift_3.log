@@ -1,0 +1,49 @@
+Success. Node compute in mgmt: 10.10.1.31.
+IP address of this node's interface in management network: 10.10.1.31.
+'/etc/rsyncd.conf' -> '/tmp/095_etc_rsyncd.conf.iniset'
+'/etc/rsyncd.conf' -> '/tmp/096_etc_rsyncd.conf.iniset'
+'/etc/rsyncd.conf' -> '/tmp/097_etc_rsyncd.conf.iniset'
+'/etc/rsyncd.conf' -> '/tmp/098_etc_rsyncd.conf.iniset'
+'/etc/rsyncd.conf' -> '/tmp/099_etc_rsyncd.conf.iniset'
+'/etc/rsyncd.conf' -> '/tmp/100_etc_rsyncd.conf.iniset'
+iniset /tmp/100_etc_rsyncd.conf.iniset account max connections 2
+'/etc/rsyncd.conf' -> '/tmp/101_etc_rsyncd.conf.iniset'
+iniset /tmp/101_etc_rsyncd.conf.iniset account path /srv/node/
+'/etc/rsyncd.conf' -> '/tmp/102_etc_rsyncd.conf.iniset'
+iniset /tmp/102_etc_rsyncd.conf.iniset account read only False
+'/etc/rsyncd.conf' -> '/tmp/103_etc_rsyncd.conf.iniset'
+iniset /tmp/103_etc_rsyncd.conf.iniset account lock file /var/lock/account.lock
+'/etc/rsyncd.conf' -> '/tmp/104_etc_rsyncd.conf.iniset'
+iniset /tmp/104_etc_rsyncd.conf.iniset container max connections 2
+'/etc/rsyncd.conf' -> '/tmp/105_etc_rsyncd.conf.iniset'
+iniset /tmp/105_etc_rsyncd.conf.iniset container path /srv/node/
+'/etc/rsyncd.conf' -> '/tmp/106_etc_rsyncd.conf.iniset'
+iniset /tmp/106_etc_rsyncd.conf.iniset container read only False
+'/etc/rsyncd.conf' -> '/tmp/107_etc_rsyncd.conf.iniset'
+iniset /tmp/107_etc_rsyncd.conf.iniset container lock file /var/lock/container.lock
+'/etc/rsyncd.conf' -> '/tmp/108_etc_rsyncd.conf.iniset'
+iniset /tmp/108_etc_rsyncd.conf.iniset object max connections 2
+'/etc/rsyncd.conf' -> '/tmp/109_etc_rsyncd.conf.iniset'
+iniset /tmp/109_etc_rsyncd.conf.iniset object path /srv/node/
+'/etc/rsyncd.conf' -> '/tmp/110_etc_rsyncd.conf.iniset'
+iniset /tmp/110_etc_rsyncd.conf.iniset object read only False
+'/etc/rsyncd.conf' -> '/tmp/111_etc_rsyncd.conf.iniset'
+iniset /tmp/111_etc_rsyncd.conf.iniset object lock file /var/lock/object.lock
+'/etc/default/rsync' -> '/tmp/112_etc_default_rsync.iniset'
+start the rsync service.
+Synchronizing state of rsync.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install enable rsync
+● rsync.service - fast remote file copy program daemon
+     Loaded: loaded (/lib/systemd/system/rsync.service; enabled; vendor preset: enabled)
+     Active: active (running) since Sat 2023-10-28 17:30:01 IST; 11s ago
+       Docs: man:rsync(1)
+             man:rsyncd.conf(5)
+   Main PID: 18614 (rsync)
+      Tasks: 1 (limit: 6334)
+     Memory: 788.0K
+        CPU: 9ms
+     CGroup: /system.slice/rsync.service
+             └─18614 /usr/bin/rsync --daemon --no-detach
+
+Oct 28 17:30:01 compute systemd[1]: Started fast remote file copy program daemon.
+Oct 28 17:30:01 compute rsyncd[18614]: rsyncd version 3.2.7 starting, listening on port 873

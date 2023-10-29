@@ -1,0 +1,127 @@
+Installing OpenStack client.
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+python3-openstackclient is already the newest version (5.8.0-0ubuntu1).
+0 upgraded, 0 newly installed, 0 to remove and 10 not upgraded.
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Calculating upgrade...
+#
+# Canonical released microcode updates for both Intel (CVE-2022-40982) and AMD
+# (CVE-2023-20593). ‘Unattended upgrades’ provide security updates by default.
+# Ensure it remains enabled to always get all updates as they become available.
+#
+The following packages will be upgraded:
+  bind9-dnsutils bind9-host bind9-libs libnss-systemd libpam-systemd
+  libsystemd0 libudev1 systemd systemd-sysv udev
+10 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 133 kB/8,334 kB of archives.
+After this operation, 5,223 kB disk space will be freed.
+Get:1 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libnss-systemd amd64 249.11-0ubuntu3.11 [133 kB]
+Fetched 133 kB in 1s (151 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 85585 files and directories currently installed.)
+Preparing to unpack .../libsystemd0_249.11-0ubuntu3.11_amd64.deb ...
+Unpacking libsystemd0:amd64 (249.11-0ubuntu3.11) over (249.11-0ubuntu3.10) ...
+Setting up libsystemd0:amd64 (249.11-0ubuntu3.11) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 85585 files and directories currently installed.)
+Preparing to unpack .../0-libnss-systemd_249.11-0ubuntu3.11_amd64.deb ...
+Unpacking libnss-systemd:amd64 (249.11-0ubuntu3.11) over (249.11-0ubuntu3.10) ...
+Preparing to unpack .../1-systemd-sysv_249.11-0ubuntu3.11_amd64.deb ...
+Unpacking systemd-sysv (249.11-0ubuntu3.11) over (249.11-0ubuntu3.10) ...
+Preparing to unpack .../2-libpam-systemd_249.11-0ubuntu3.11_amd64.deb ...
+Unpacking libpam-systemd:amd64 (249.11-0ubuntu3.11) over (249.11-0ubuntu3.10) ...
+Preparing to unpack .../3-systemd_249.11-0ubuntu3.11_amd64.deb ...
+Unpacking systemd (249.11-0ubuntu3.11) over (249.11-0ubuntu3.10) ...
+Preparing to unpack .../4-udev_249.11-0ubuntu3.11_amd64.deb ...
+Unpacking udev (249.11-0ubuntu3.11) over (249.11-0ubuntu3.10) ...
+Preparing to unpack .../5-libudev1_249.11-0ubuntu3.11_amd64.deb ...
+Unpacking libudev1:amd64 (249.11-0ubuntu3.11) over (249.11-0ubuntu3.10) ...
+Setting up libudev1:amd64 (249.11-0ubuntu3.11) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 85585 files and directories currently installed.)
+Preparing to unpack .../bind9-host_1%3a9.18.18-0ubuntu0.22.04.1_amd64.deb ...
+Unpacking bind9-host (1:9.18.18-0ubuntu0.22.04.1) over (1:9.18.12-0ubuntu0.22.04.3) ...
+Preparing to unpack .../bind9-dnsutils_1%3a9.18.18-0ubuntu0.22.04.1_amd64.deb ...
+Unpacking bind9-dnsutils (1:9.18.18-0ubuntu0.22.04.1) over (1:9.18.12-0ubuntu0.22.04.3) ...
+Preparing to unpack .../bind9-libs_1%3a9.18.18-0ubuntu0.22.04.1_amd64.deb ...
+Unpacking bind9-libs:amd64 (1:9.18.18-0ubuntu0.22.04.1) over (1:9.18.12-0ubuntu0.22.04.3) ...
+Setting up bind9-libs:amd64 (1:9.18.18-0ubuntu0.22.04.1) ...
+Setting up systemd (249.11-0ubuntu3.11) ...
+Setting up udev (249.11-0ubuntu3.11) ...
+Setting up bind9-host (1:9.18.18-0ubuntu0.22.04.1) ...
+Setting up systemd-sysv (249.11-0ubuntu3.11) ...
+Setting up libnss-systemd:amd64 (249.11-0ubuntu3.11) ...
+Setting up libpam-systemd:amd64 (249.11-0ubuntu3.11) ...
+Setting up bind9-dnsutils (1:9.18.18-0ubuntu0.22.04.1) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.4) ...
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for dbus (1.12.20-2ubuntu4.1) ...
+Processing triggers for initramfs-tools (0.140ubuntu13.4) ...
+update-initramfs: Generating /boot/initrd.img-5.15.0-87-generic
+NEEDRESTART-VER: 3.5
+NEEDRESTART-KCUR: 5.15.0-87-generic
+NEEDRESTART-KEXP: 5.15.0-87-generic
+NEEDRESTART-KSTA: 1
+NEEDRESTART-SVC: dbus.service
+NEEDRESTART-SVC: ModemManager.service
+NEEDRESTART-SVC: multipathd.service
+NEEDRESTART-SVC: networkd-dispatcher.service
+NEEDRESTART-SVC: NetworkManager.service
+NEEDRESTART-SVC: ntp.service
+NEEDRESTART-SVC: packagekit.service
+NEEDRESTART-SVC: polkit.service
+NEEDRESTART-SVC: ssh.service
+NEEDRESTART-SVC: systemd-logind.service
+NEEDRESTART-SVC: tgt.service
+NEEDRESTART-SVC: udisks2.service
+NEEDRESTART-SVC: unattended-upgrades.service
+NEEDRESTART-SVC: user@1000.service
+NEEDRESTART-SVC: wpa_supplicant.service
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Calculating upgrade...
+#
+# Canonical released microcode updates for both Intel (CVE-2022-40982) and AMD
+# (CVE-2023-20593). ‘Unattended upgrades’ provide security updates by default.
+# Ensure it remains enabled to always get all updates as they become available.
+#
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+ifupdown is already the newest version (0.8.36+nmu1ubuntu3).
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Installing curl, tree (they are small and useful).
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+tree is already the newest version (2.0.2-1).
+curl is already the newest version (7.81.0-1ubuntu1.14).
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.

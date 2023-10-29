@@ -1,0 +1,18 @@
+# Used by stack.sh and guest scripts
+
+: ${OSBASH_LIB_DIR:=$LIB_DIR/stack}
+: ${OSBASH_SCRIPTS_DIR:=$SCRIPTS_DIR/stack}
+
+: ${TEMPLATE_DIR:=$LIB_DIR/stack/templates}
+
+# Name of VirtualBox shared folder
+: ${SHARE_NAME:=stack}
+
+# Note: shell user name and password are set in preseed.cfg
+VM_SHELL_USER=stack
+
+# Override disk size in MB (default is 10000 MB, inherited by node VMs)
+# BASE_DISK_SIZE=10000
+
+# vim: set ai ts=4 sw=4 et ft=sh:
+

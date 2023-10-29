@@ -1,0 +1,223 @@
+Success. Node compute in mgmt: 10.10.1.31.
+IP address of this node's interface in management network: 10.10.1.31.
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  liberasurecode1 libgf-complete1 libjerasure2 python3-pyeclib python3-swift
+  python3-xattr
+Suggested packages:
+  libisal2 swift-bench
+The following NEW packages will be installed:
+  liberasurecode1 libgf-complete1 libjerasure2 python3-pyeclib python3-swift
+  python3-xattr swift swift-account swift-container
+0 upgraded, 9 newly installed, 0 to remove and 14 not upgraded.
+Need to get 925 kB of archives.
+After this operation, 5,064 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu jammy/main amd64 liberasurecode1 amd64 1.6.2-1build2 [43.3 kB]
+Get:2 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-pyeclib amd64 1.6.0-7build1 [28.6 kB]
+Get:3 http://archive.ubuntu.com/ubuntu jammy/main amd64 libgf-complete1 amd64 1.0.2+2017.04.10.git.ea75cdf-7build1 [70.2 kB]
+Get:4 http://archive.ubuntu.com/ubuntu jammy/main amd64 libjerasure2 amd64 2.0.0+2017.04.10.git.de1739cc84-2build2 [29.3 kB]
+Get:5 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-xattr amd64 0.9.7-1build4 [16.3 kB]
+Get:6 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 python3-swift all 2.29.2-0ubuntu1 [653 kB]
+Get:7 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 swift all 2.29.2-0ubuntu1 [26.7 kB]
+Get:8 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 swift-account all 2.29.2-0ubuntu1 [25.2 kB]
+Get:9 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 swift-container all 2.29.2-0ubuntu1 [32.3 kB]
+Fetched 925 kB in 2s (411 kB/s)
+Selecting previously unselected package liberasurecode1:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 91099 files and directories currently installed.)
+Preparing to unpack .../0-liberasurecode1_1.6.2-1build2_amd64.deb ...
+Unpacking liberasurecode1:amd64 (1.6.2-1build2) ...
+Selecting previously unselected package python3-pyeclib.
+Preparing to unpack .../1-python3-pyeclib_1.6.0-7build1_amd64.deb ...
+Unpacking python3-pyeclib (1.6.0-7build1) ...
+Selecting previously unselected package libgf-complete1:amd64.
+Preparing to unpack .../2-libgf-complete1_1.0.2+2017.04.10.git.ea75cdf-7build1_amd64.deb ...
+Unpacking libgf-complete1:amd64 (1.0.2+2017.04.10.git.ea75cdf-7build1) ...
+Selecting previously unselected package libjerasure2:amd64.
+Preparing to unpack .../3-libjerasure2_2.0.0+2017.04.10.git.de1739cc84-2build2_amd64.deb ...
+Unpacking libjerasure2:amd64 (2.0.0+2017.04.10.git.de1739cc84-2build2) ...
+Selecting previously unselected package python3-xattr.
+Preparing to unpack .../4-python3-xattr_0.9.7-1build4_amd64.deb ...
+Unpacking python3-xattr (0.9.7-1build4) ...
+Selecting previously unselected package python3-swift.
+Preparing to unpack .../5-python3-swift_2.29.2-0ubuntu1_all.deb ...
+Unpacking python3-swift (2.29.2-0ubuntu1) ...
+Selecting previously unselected package swift.
+Preparing to unpack .../6-swift_2.29.2-0ubuntu1_all.deb ...
+Unpacking swift (2.29.2-0ubuntu1) ...
+Selecting previously unselected package swift-account.
+Preparing to unpack .../7-swift-account_2.29.2-0ubuntu1_all.deb ...
+Unpacking swift-account (2.29.2-0ubuntu1) ...
+Selecting previously unselected package swift-container.
+Preparing to unpack .../8-swift-container_2.29.2-0ubuntu1_all.deb ...
+Unpacking swift-container (2.29.2-0ubuntu1) ...
+Setting up python3-xattr (0.9.7-1build4) ...
+Setting up liberasurecode1:amd64 (1.6.2-1build2) ...
+Setting up libgf-complete1:amd64 (1.0.2+2017.04.10.git.ea75cdf-7build1) ...
+Setting up libjerasure2:amd64 (2.0.0+2017.04.10.git.de1739cc84-2build2) ...
+Setting up python3-pyeclib (1.6.0-7build1) ...
+Setting up python3-swift (2.29.2-0ubuntu1) ...
+
+Configuration file '/etc/swift/account-server.conf', does not exist on system.
+Installing new config file as you requested.
+
+Configuration file '/etc/swift/container-server.conf', does not exist on system.
+Installing new config file as you requested.
+
+Configuration file '/etc/swift/object-expirer.conf', does not exist on system.
+Installing new config file as you requested.
+
+Configuration file '/etc/swift/object-server.conf', does not exist on system.
+Installing new config file as you requested.
+Setting up swift-account (2.29.2-0ubuntu1) ...
+
+Configuration file '/etc/init.d/swift-account', does not exist on system.
+Installing new config file as you requested.
+
+Configuration file '/etc/init.d/swift-account-auditor', does not exist on system.
+Installing new config file as you requested.
+
+Configuration file '/etc/init.d/swift-account-reaper', does not exist on system.
+Installing new config file as you requested.
+
+Configuration file '/etc/init.d/swift-account-replicator', does not exist on system.
+Installing new config file as you requested.
+Created symlink /etc/systemd/system/multi-user.target.wants/swift-account-auditor.service → /lib/systemd/system/swift-account-auditor.service.
+Could not execute systemctl:  at /usr/bin/deb-systemd-invoke line 142.
+Created symlink /etc/systemd/system/multi-user.target.wants/swift-account-reaper.service → /lib/systemd/system/swift-account-reaper.service.
+Could not execute systemctl:  at /usr/bin/deb-systemd-invoke line 142.
+Created symlink /etc/systemd/system/multi-user.target.wants/swift-account-replicator.service → /lib/systemd/system/swift-account-replicator.service.
+Could not execute systemctl:  at /usr/bin/deb-systemd-invoke line 142.
+Created symlink /etc/systemd/system/multi-user.target.wants/swift-account.service → /lib/systemd/system/swift-account.service.
+Could not execute systemctl:  at /usr/bin/deb-systemd-invoke line 142.
+Setting up swift-container (2.29.2-0ubuntu1) ...
+
+Configuration file '/etc/init.d/swift-container', does not exist on system.
+Installing new config file as you requested.
+
+Configuration file '/etc/init.d/swift-container-auditor', does not exist on system.
+Installing new config file as you requested.
+
+Configuration file '/etc/init.d/swift-container-reconciler', does not exist on system.
+Installing new config file as you requested.
+
+Configuration file '/etc/init.d/swift-container-replicator', does not exist on system.
+Installing new config file as you requested.
+
+Configuration file '/etc/init.d/swift-container-sharder', does not exist on system.
+Installing new config file as you requested.
+
+Configuration file '/etc/init.d/swift-container-sync', does not exist on system.
+Installing new config file as you requested.
+
+Configuration file '/etc/init.d/swift-container-updater', does not exist on system.
+Installing new config file as you requested.
+Created symlink /etc/systemd/system/multi-user.target.wants/swift-container-auditor.service → /lib/systemd/system/swift-container-auditor.service.
+Could not execute systemctl:  at /usr/bin/deb-systemd-invoke line 142.
+Created symlink /etc/systemd/system/multi-user.target.wants/swift-container-reconciler.service → /lib/systemd/system/swift-container-reconciler.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/swift-container-replicator.service → /lib/systemd/system/swift-container-replicator.service.
+Could not execute systemctl:  at /usr/bin/deb-systemd-invoke line 142.
+Created symlink /etc/systemd/system/multi-user.target.wants/swift-container-sharder.service → /lib/systemd/system/swift-container-sharder.service.
+Could not execute systemctl:  at /usr/bin/deb-systemd-invoke line 142.
+Created symlink /etc/systemd/system/multi-user.target.wants/swift-container-sync.service → /lib/systemd/system/swift-container-sync.service.
+Could not execute systemctl:  at /usr/bin/deb-systemd-invoke line 142.
+Created symlink /etc/systemd/system/multi-user.target.wants/swift-container-updater.service → /lib/systemd/system/swift-container-updater.service.
+Could not execute systemctl:  at /usr/bin/deb-systemd-invoke line 142.
+Created symlink /etc/systemd/system/multi-user.target.wants/swift-container.service → /lib/systemd/system/swift-container.service.
+Could not execute systemctl:  at /usr/bin/deb-systemd-invoke line 142.
+Setting up swift (2.29.2-0ubuntu1) ...
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.4) ...
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libinih1
+Suggested packages:
+  xfsdump attr quota
+The following NEW packages will be installed:
+  libinih1 swift-object xfsprogs
+0 upgraded, 3 newly installed, 1 reinstalled, 0 to remove and 14 not upgraded.
+Need to get 1,562 kB of archives.
+After this operation, 3,025 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu jammy/main amd64 libinih1 amd64 53-1ubuntu3 [7,250 B]
+Get:2 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 python3-swift all 2.29.2-0ubuntu1 [653 kB]
+Get:3 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 swift-object all 2.29.2-0ubuntu1 [31.4 kB]
+Get:4 http://archive.ubuntu.com/ubuntu jammy/main amd64 xfsprogs amd64 5.13.0-1ubuntu2 [870 kB]
+Fetched 1,562 kB in 2s (634 kB/s)
+Selecting previously unselected package libinih1:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 91499 files and directories currently installed.)
+Preparing to unpack .../libinih1_53-1ubuntu3_amd64.deb ...
+Unpacking libinih1:amd64 (53-1ubuntu3) ...
+Preparing to unpack .../python3-swift_2.29.2-0ubuntu1_all.deb ...
+Unpacking python3-swift (2.29.2-0ubuntu1) over (2.29.2-0ubuntu1) ...
+Selecting previously unselected package swift-object.
+Preparing to unpack .../swift-object_2.29.2-0ubuntu1_all.deb ...
+Unpacking swift-object (2.29.2-0ubuntu1) ...
+Selecting previously unselected package xfsprogs.
+Preparing to unpack .../xfsprogs_5.13.0-1ubuntu2_amd64.deb ...
+Unpacking xfsprogs (5.13.0-1ubuntu2) ...
+Setting up python3-swift (2.29.2-0ubuntu1) ...
+Setting up libinih1:amd64 (53-1ubuntu3) ...
+Setting up xfsprogs (5.13.0-1ubuntu2) ...
+update-initramfs: deferring update (trigger activated)
+Setting up swift-object (2.29.2-0ubuntu1) ...
+
+Configuration file '/etc/init.d/swift-object', does not exist on system.
+Installing new config file as you requested.
+
+Configuration file '/etc/init.d/swift-object-auditor', does not exist on system.
+Installing new config file as you requested.
+
+Configuration file '/etc/init.d/swift-object-reconstructor', does not exist on system.
+Installing new config file as you requested.
+
+Configuration file '/etc/init.d/swift-object-replicator', does not exist on system.
+Installing new config file as you requested.
+
+Configuration file '/etc/init.d/swift-object-updater', does not exist on system.
+Installing new config file as you requested.
+Created symlink /etc/systemd/system/multi-user.target.wants/swift-object-auditor.service → /lib/systemd/system/swift-object-auditor.service.
+Could not execute systemctl:  at /usr/bin/deb-systemd-invoke line 142.
+Created symlink /etc/systemd/system/multi-user.target.wants/swift-object-reconstructor.service → /lib/systemd/system/swift-object-reconstructor.service.
+Could not execute systemctl:  at /usr/bin/deb-systemd-invoke line 142.
+Created symlink /etc/systemd/system/multi-user.target.wants/swift-object-replicator.service → /lib/systemd/system/swift-object-replicator.service.
+Could not execute systemctl:  at /usr/bin/deb-systemd-invoke line 142.
+Created symlink /etc/systemd/system/multi-user.target.wants/swift-object-updater.service → /lib/systemd/system/swift-object-updater.service.
+Could not execute systemctl:  at /usr/bin/deb-systemd-invoke line 142.
+Created symlink /etc/systemd/system/multi-user.target.wants/swift-object.service → /lib/systemd/system/swift-object.service.
+Could not execute systemctl:  at /usr/bin/deb-systemd-invoke line 142.
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.4) ...
+Processing triggers for initramfs-tools (0.140ubuntu13.4) ...
+update-initramfs: Generating /boot/initrd.img-5.15.0-87-lowlatency
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following NEW packages will be installed:
+  python3-swiftclient
+0 upgraded, 1 newly installed, 1 reinstalled, 0 to remove and 14 not upgraded.
+Need to get 505 kB of archives.
+After this operation, 387 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 rsync amd64 3.2.7-0ubuntu0.22.04.2 [436 kB]
+Get:2 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-swiftclient all 1:3.13.1-0ubuntu1 [68.5 kB]
+Fetched 505 kB in 1s (361 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 91603 files and directories currently installed.)
+Preparing to unpack .../rsync_3.2.7-0ubuntu0.22.04.2_amd64.deb ...
+Unpacking rsync (3.2.7-0ubuntu0.22.04.2) over (3.2.7-0ubuntu0.22.04.2) ...
+Selecting previously unselected package python3-swiftclient.
+Preparing to unpack .../python3-swiftclient_1%3a3.13.1-0ubuntu1_all.deb ...
+Unpacking python3-swiftclient (1:3.13.1-0ubuntu1) ...
+Setting up python3-swiftclient (1:3.13.1-0ubuntu1) ...
+Setting up rsync (3.2.7-0ubuntu0.22.04.2) ...
+Processing triggers for man-db (2.10.2-1) ...

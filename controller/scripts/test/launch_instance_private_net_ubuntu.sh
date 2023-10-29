@@ -20,9 +20,9 @@ sudo echo "1" > sudo /proc/sys/net/ipv4/ip_forward
 sudo modprobe ip_tables
 sudo modprobe ip_conntrack
 sudo iptables -t nat -A POSTROUTING -o enp0s9 -j MASQUERADE
-sudo iptables -A FORWARD -i enp0s9 -o vboxnet2 -m state \
+sudo iptables -A FORWARD -i enp0s9 -o enp0s3 -m state \
           --state RELATED,ESTABLISHED -j ACCEPT
-sudo iptables -A FORWARD -i vboxnet2 -o enp0s9 -j ACCEPT
+sudo iptables -A FORWARD -i enp0s3 -o enp0s9 -j ACCEPT
 
 # Set this true if you have masquerading enabled to allow instance VMs access
 # to the Internet.

@@ -7,9 +7,13 @@ NET_IF_0=dhcp
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 # Mgmt network (elevate interface boot priority to 1; set when PXE booting)
-NET_IF_1="static 10.0.0.41 1"
+
+# Assign network interfaces to networks
+NET_IF_0="static 10.10.0.41 1"
+NET_IF_1="static 10.10.1.41 1"
 # Public network (select network, IP address configured manually)
 NET_IF_2="manual 203.0.113.0"
+NET_IF_3=dhcp
 
 # Size of second disk in MB (/dev/sdb)
 # Test volume is 1 GB; backing volume must be bigger
@@ -18,4 +22,3 @@ SECOND_DISK_SIZE=1280
 #------------------------------------------------------------------------------
 # demands 2048 MB of RAM, but 1024 MB is enough for one CirrOS instance.
 VM_MEM=1024
-

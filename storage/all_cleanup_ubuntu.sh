@@ -1,24 +1,25 @@
-sudo apt remove -y python3-wcwidth python3-cmd2 xml-core ieee-data libpaper-utils
-sudo apt remove -y python-babel-localedata python3-appdirs python3-babel python3-bs4 python3-os-service-types python3-netaddr python3-roman python3-crypto
-sudo apt remove -y python3-decorator python3-mako python3-html5lib python3-monotonic
-sudo apt remove -y python3-oslo.utils python3-docutils python3-oslo.serialization python3-oslo.context python3-deprecation python3-cliff python3-docutils
-sudo apt remove -y python3-wrapt python3-keystoneauth1 libjbig0 libjpeg8 python3-dogpile.cache python3-oslo.log mariadb-server python3-mysqldb barbican-api barbican-worker barbican-keystone-listener
-sudo apt remove -y memcached python3-memcache
-sudo apt remove -y git python-pip virtualenv libmysqlclient-dev python-networking-sfc heat-api heat-api-cfn heat-engine python3-openstackclient cinder-api cinder-scheduler
-sudo apt remove -y placement-api python3-pip openstack-dashboard glance rabbitmq-server swift swift-account swift-container swift-object xfsprogs
-sudo apt remove -y python3-swift python3-swiftclient  keystone nova-api nova-conductor nova-novncproxy nova-scheduler
+sudo apt remove -y --purge python3-wcwidth
+sudo apt remove -y --purge python3-cmd2
+sudo apt remove -y --purge python3-oslo.utils python3-docutils python3-oslo.serialization python3-oslo.context python3-deprecation python3-cliff python3-docutils
+sudo apt remove -y --purge barbican-api
+sudo apt remove -y --purge git
+sudo apt remove -y --purge python3-pip virtualenv python3-openstackclient cinder-api cinder-scheduler
+sudo apt remove -y --purge python3-openstackclient
+sudo apt remove -y --purge cinder-api cinder-scheduler
+sudo apt remove -y --purge cinder-scheduler
+sudo apt remove -y --purge swift
+sudo apt remove -y --purge swift-account
+sudo apt remove -y --purge python3-swift python3-swiftclient  nova-api nova-conductor nova-novncproxy nova-scheduler
+sudo rm -rf /etc/cinder/ /etc/neutron/ /var/lib/cinder/ /var/lib/neutron/ /var/lib/openvswitch/ /etc/sysconfig/openstack-nova-novncproxy \
+        /etc/swift/ /var/log/swift/
 
-sudo rm -rf /etc/cinder/ /etc/glance/ /etc/neutron/ /etc/nova/ /var/lib/cinder/ \
-	/var/lib/apache2/ /var/lib/mysql/ /var/lib/glance/ /var/lib/nova/ /var/lib/openstack-dashboard/ \
-	/var/lib/neutron/ /etc/placement/ /etc/rabbitmq/ /var/lib/openvswitch/ /var/lib/rabbitmq/ /etc/sysconfig/openstack-nova-novncproxy \
-	/etc/swift/ /var/log/swift/ /etc/sysconfig/memcached /home/stack/scripts/centos/*.{mod,pp,te}
+sudo rm -rf /home/stack/log/* /etc/ceilometer /etc/barbican /etc/gnocchi  /var/log/gnocchi \
+           /var/log/neutron /var/log/cinder /var/log/ceilometer /tmp/*
 
-sudo rm -rf /home/stack/log/* /etc/ceilometer /etc/barbican /etc/gnocchi /etc/heat /var/log/glance /var/log/gnocchi /var/log/heat \
-	   /var/log/neutron /var/log/nova /var/log/placement /var/log/rabbitmq  /var/log/cinder /var/log/ceilometer /var/log/apache2 \
-	   /var/log/mariadb
-
-sudo rm -rf /var/lib/swift /var/lib/gnocchi /var/lib/heat /var/lib/ceilometer /var/lib/barbican /tmp/*  /etc/openstack-dashboard/ /etc/openvswitch/
-sudo rm -rf /var/log/*.lsl /etc/apache2 /etc/rsyncd.conf
-sudo sed -i "s/^net.*$//g" /etc/sysctl.conf /etc/keystone/
-sudo apt autoremove
+sudo rm -rf /var/lib/swift /var/lib/gnocchi /var/lib/ceilometer /var/lib/barbican /tmp/* /etc/openvswitch/
+sudo rm -rf /var/cache/swift /etc/swift
+sudo rm -rf /var/cache/barbican  /var/cache/cinder /var/cache/neutron  /var/cache/nova
+sudo rm -rf /var/log/*.lsl /etc/rsyncd.conf  /etc/rsyslog.conf
+sudo sed -i "s/^net.*$//g" /etc/sysctl.conf
+sudo apt autoremove -y
 

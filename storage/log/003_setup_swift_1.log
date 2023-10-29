@@ -1,0 +1,69 @@
+Success. Node storage in mgmt: 10.10.1.41.
+IP address of this node's interface in management network: 10.10.1.41.
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  liberasurecode1 libgf-complete1 libjerasure2 pycadf-common
+  python-pastedeploy-tpl python3-dnspython python3-eventlet python3-greenlet
+  python3-keystonemiddleware python3-memcache python3-oslo.cache python3-paste
+  python3-pastedeploy python3-pastescript python3-pycadf python3-pyeclib
+  python3-requests-toolbelt python3-swift python3-tempita python3-webob
+  python3-xattr
+Suggested packages:
+  libisal2 python3-sniffio python3-trio python-eventlet-doc
+  python-greenlet-dev python-greenlet-doc memcached python-oslo.cache-doc
+  httpd-wsgi libapache2-mod-python libapache2-mod-scgi libjs-mochikit
+  python3-cherrypy3 python-webob-doc swift-bench
+The following NEW packages will be installed:
+  liberasurecode1 libgf-complete1 libjerasure2 pycadf-common
+  python-pastedeploy-tpl python3-dnspython python3-eventlet python3-greenlet
+  python3-keystonemiddleware python3-memcache python3-oslo.cache python3-paste
+  python3-pastedeploy python3-pastescript python3-pycadf python3-pyeclib
+  python3-requests-toolbelt python3-swift python3-tempita python3-webob
+  python3-xattr swift swift-account
+0 upgraded, 23 newly installed, 0 to remove and 0 not upgraded.
+Need to get 2,060 kB of archives.
+After this operation, 10.3 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu jammy/main amd64 pycadf-common all 3.1.1-2 [4,608 B]
+Err:2 http://archive.ubuntu.com/ubuntu jammy/main amd64 python-pastedeploy-tpl all 2.1.1-1
+  400  Bad Request [IP: 91.189.91.83 80]
+Get:3 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-dnspython all 2.1.0-1ubuntu1 [123 kB]
+Err:4 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-greenlet amd64 1.1.2-3build1
+  400  Bad Request [IP: 91.189.91.83 80]
+Get:5 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-eventlet all 0.30.2-5ubuntu2 [158 kB]
+Err:6 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-memcache all 1.59-5
+  400  Bad Request [IP: 91.189.91.83 80]
+Get:7 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-oslo.cache all 2.9.0-0ubuntu1 [35.2 kB]
+Err:8 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-pycadf all 3.1.1-2
+  400  Bad Request [IP: 91.189.91.83 80]
+Get:9 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-webob all 1:1.8.6-1.1 [85.2 kB]
+Err:10 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 python3-keystonemiddleware all 9.4.0-0ubuntu1.1
+  400  Bad Request [IP: 91.189.91.83 80]
+Get:11 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-tempita all 0.5.2-6ubuntu1 [15.1 kB]
+Err:12 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-paste all 3.5.0+dfsg1-1
+  400  Bad Request [IP: 91.189.91.83 80]
+Get:13 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-pastedeploy all 2.1.1-1 [26.6 kB]
+Err:14 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-pastescript all 2.0.2-4
+  400  Bad Request [IP: 91.189.91.83 80]
+Get:15 http://archive.ubuntu.com/ubuntu jammy/main amd64 liberasurecode1 amd64 1.6.2-1build2 [43.3 kB]
+Get:16 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-pyeclib amd64 1.6.0-7build1 [28.6 kB]
+Get:17 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-requests-toolbelt all 0.9.1-1 [38.0 kB]
+Get:18 http://archive.ubuntu.com/ubuntu jammy/main amd64 libgf-complete1 amd64 1.0.2+2017.04.10.git.ea75cdf-7build1 [70.2 kB]
+Get:19 http://archive.ubuntu.com/ubuntu jammy/main amd64 libjerasure2 amd64 2.0.0+2017.04.10.git.de1739cc84-2build2 [29.3 kB]
+Get:20 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-xattr amd64 0.9.7-1build4 [16.3 kB]
+Get:21 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 python3-swift all 2.29.2-0ubuntu1 [653 kB]
+Get:22 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 swift all 2.29.2-0ubuntu1 [26.7 kB]
+Get:23 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 swift-account all 2.29.2-0ubuntu1 [25.2 kB]
+Fetched 1,379 kB in 12s (115 kB/s)
+E: Failed to fetch http://archive.ubuntu.com/ubuntu/pool/main/p/pastedeploy/python-pastedeploy-tpl_2.1.1-1_all.deb  400  Bad Request [IP: 91.189.91.83 80]
+E: Failed to fetch http://archive.ubuntu.com/ubuntu/pool/main/p/python-greenlet/python3-greenlet_1.1.2-3build1_amd64.deb  400  Bad Request [IP: 91.189.91.83 80]
+E: Failed to fetch http://archive.ubuntu.com/ubuntu/pool/main/p/python-memcache/python3-memcache_1.59-5_all.deb  400  Bad Request [IP: 91.189.91.83 80]
+E: Failed to fetch http://archive.ubuntu.com/ubuntu/pool/main/p/python-pycadf/python3-pycadf_3.1.1-2_all.deb  400  Bad Request [IP: 91.189.91.83 80]
+E: Failed to fetch http://archive.ubuntu.com/ubuntu/pool/main/p/python-keystonemiddleware/python3-keystonemiddleware_9.4.0-0ubuntu1.1_all.deb  400  Bad Request [IP: 91.189.91.83 80]
+E: Failed to fetch http://archive.ubuntu.com/ubuntu/pool/main/p/paste/python3-paste_3.5.0%2bdfsg1-1_all.deb  400  Bad Request [IP: 91.189.91.83 80]
+E: Failed to fetch http://archive.ubuntu.com/ubuntu/pool/main/p/pastescript/python3-pastescript_2.0.2-4_all.deb  400  Bad Request [IP: 91.189.91.83 80]
+E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?

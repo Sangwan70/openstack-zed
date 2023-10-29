@@ -44,7 +44,7 @@ sudo apt update
 #--------------------------------------------------------------------------
 
 echo "Installing packages needed for add-apt-repository."
-sudo apt -y install software-properties-common python3-openstackclient
+sudo apt -y install software-properties-common
 
 case "$OPENSTACK_RELEASE" in
     wallaby)

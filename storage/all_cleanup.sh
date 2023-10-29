@@ -1,7 +1,4 @@
 sudo semodule -r novaapi
-sudo semodule -r httpd
-sudo semodule -r glanceapi
-sudo semodule -r rabbitmqctl
 sudo semodule -r linuxbridgectl
 sudo semodule -r ovsofctl
 
@@ -11,8 +8,8 @@ sudo firewall-cmd --permanent --remove-service={http,https,mysql}
 sudo firewall-cmd --permanent --remove-port={11211,8000,8004,8041,5672,5000,9191,9292,9311,6080,6081,6082,8774,8775,8778,8776,9696}/tcp
 sudo firewall-cmd --reload
 
-sudo yum erase -y mariadb-server mariadb rabbitmq-server python3-openstackclient memcached python3-memcached  \
-	openstack-keystone httpd python3-mod_wsgi python3-heatclient openstack-glance openstack-neutron openstack-neutron-ml2 \
+sudo yum erase -y python3-openstackclient memcached python3-memcached  \
+	openstack-neutron openstack-neutron-ml2 \
 	openstack-nova-api openstack-nova-conductor openstack-nova-novncproxy openstack-nova-scheduler \
 	openstack-neutron-linuxbridge openstack-cinder openstack-placement-api openstack-dashboard openstack-heat-common \
 	openstack-heat-api openstack-heat-api-cfn openstack-heat-engine
