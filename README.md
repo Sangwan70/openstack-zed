@@ -15,7 +15,7 @@
     enp0s9|Unconfigured         enp0s9|Unconfigured         enp0s9|Unconfigured
 
 ```
-
+Create three Virtual Machines in Oracle VM Virtual Box as given in the diagrame above and set networking.
 Login as user "stack" and generate ssh key pair
 ```
 ssh-keygen -P ""
