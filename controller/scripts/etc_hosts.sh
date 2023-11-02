@@ -8,8 +8,7 @@ indicate_current_auto
 
 exec_logfile
 
-# The install-guide wants to use the hostname as the name of the interface
-# in the mgmt network. We cannot allow 127.0.0.1 to share the name.
+# We cannot allow 127.0.0.1 to share the name.
 HOST_NAME=$(hostname)-lo
 HOST_FILE=/etc/hosts
 

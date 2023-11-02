@@ -18,15 +18,8 @@ CIRROS_IMG_NAME="cirros"
 #------------------------------------------------------------------------------
 
 # Networks used by OpenStack setup
-NETWORK_0="intrnl 10.10.0.0"
-NETWORK_1="mgmt 10.10.1.0"
-NETWORK_2="provider 203.0.113.0"
-
-# Static IP used temporarily by PXE booted machines before being reconfigured
-# by stack
-PXE_INITIAL_NODE_IP="10.10.1.240"
-
-#------------------------------------------------------------------------------
+NETWORK_0="mgmt 10.10.0.0"
+NETWORK_1="provider 203.0.113.0"
 
 # Public network
 : ${PROVIDER_NETWORK_CIDR:=203.0.113.0/24}

@@ -19,10 +19,10 @@ indicate_current_auto
 cd /etc/swift
 
 sudo swift-ring-builder account.builder create 10 3 1
-sudo swift-ring-builder account.builder add --region 1 --zone 1 --ip 10.10.1.31 --port 6202 --device sdb --weight 100
-sudo swift-ring-builder account.builder add --region 1 --zone 1 --ip 10.10.1.31 --port 6202 --device sdc --weight 100
-sudo swift-ring-builder account.builder add --region 1 --zone 2 --ip 10.10.1.41 --port 6202 --device sdb --weight 100
-sudo swift-ring-builder account.builder add --region 1 --zone 2 --ip 10.10.1.41 --port 6202 --device sdc --weight 100
+sudo swift-ring-builder account.builder add --region 1 --zone 1 --ip 10.10.0.31 --port 6202 --device sdb --weight 100
+sudo swift-ring-builder account.builder add --region 1 --zone 1 --ip 10.10.0.31 --port 6202 --device sdc --weight 100
+sudo swift-ring-builder account.builder add --region 1 --zone 2 --ip 10.10.0.41 --port 6202 --device sdb --weight 100
+sudo swift-ring-builder account.builder add --region 1 --zone 2 --ip 10.10.0.41 --port 6202 --device sdc --weight 100
 
 #------------------------------------------------------------------------------
 # Verify the ring contents:
@@ -43,10 +43,10 @@ sudo swift-ring-builder container.builder create 10 3 1
 # Add each storage node to the ring:
 #------------------------------------------------------------------------------
 
-sudo swift-ring-builder container.builder add --region 1 --zone 1 --ip 10.10.1.31 --port 6201 --device sdb --weight 100
-sudo swift-ring-builder container.builder add --region 1 --zone 1 --ip 10.10.1.31 --port 6201 --device sdc --weight 100
-sudo swift-ring-builder container.builder add --region 1 --zone 2 --ip 10.10.1.41 --port 6201 --device sdb --weight 100
-sudo swift-ring-builder container.builder add --region 1 --zone 2 --ip 10.10.1.41 --port 6201 --device sdc --weight 100
+sudo swift-ring-builder container.builder add --region 1 --zone 1 --ip 10.10.0.31 --port 6201 --device sdb --weight 100
+sudo swift-ring-builder container.builder add --region 1 --zone 1 --ip 10.10.0.31 --port 6201 --device sdc --weight 100
+sudo swift-ring-builder container.builder add --region 1 --zone 2 --ip 10.10.0.41 --port 6201 --device sdb --weight 100
+sudo swift-ring-builder container.builder add --region 1 --zone 2 --ip 10.10.0.41 --port 6201 --device sdc --weight 100
 
 #------------------------------------------------------------------------------
 # Verify the ring contents:
@@ -70,10 +70,10 @@ sudo swift-ring-builder object.builder create 10 3 1
 # Add each storage node to the ring:
 #------------------------------------------------------------------------------
 
-sudo swift-ring-builder object.builder add --region 1 --zone 1 --ip 10.10.1.31 --port 6200 --device sdb --weight 100
-sudo swift-ring-builder object.builder add --region 1 --zone 1 --ip 10.10.1.31 --port 6200 --device sdc --weight 100
-sudo swift-ring-builder object.builder add --region 1 --zone 2 --ip 10.10.1.41 --port 6200 --device sdb --weight 100
-sudo swift-ring-builder object.builder add --region 1 --zone 2 --ip 10.10.1.41 --port 6200 --device sdc --weight 100
+sudo swift-ring-builder object.builder add --region 1 --zone 1 --ip 10.10.0.31 --port 6200 --device sdb --weight 100
+sudo swift-ring-builder object.builder add --region 1 --zone 1 --ip 10.10.0.31 --port 6200 --device sdc --weight 100
+sudo swift-ring-builder object.builder add --region 1 --zone 2 --ip 10.10.0.41 --port 6200 --device sdb --weight 100
+sudo swift-ring-builder object.builder add --region 1 --zone 2 --ip 10.10.0.41 --port 6200 --device sdc --weight 100
 
 #------------------------------------------------------------------------------
 # Verify the ring contents:

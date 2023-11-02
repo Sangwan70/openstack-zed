@@ -6,8 +6,6 @@
 
 # Installation ISO images, basedisk images, exported VM cluster images, etc.
 #
-# TODO(rluethi): merge these directories in the code, the option to have them
-#                in separate directories doesn't seem very useful
 : ${DISK_DIR:=$TOP_DIR/img}
 : ${IMG_DIR:=$TOP_DIR/img}
 : ${ISO_DIR:=$TOP_DIR/img}

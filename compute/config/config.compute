@@ -1,12 +1,6 @@
 # Assign network interfaces to networks
 NET_IF_0="static 10.10.0.31 1"
-NET_IF_1="static 10.10.1.31 1"
 # Public network (select network, IP address configured manually)
-NET_IF_2="manual 203.0.113.0"
-NET_IF_3=dhcp
-
-SECOND_DISK_SIZE=1280
-
-#------------------------------------------------------------------------------
-VM_MEM=1024
+NET_IF_1="manual 203.0.113.0"
+NET_IF_2=dhcp
 

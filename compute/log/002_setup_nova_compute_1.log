@@ -1,62 +1,0 @@
-Installing nova for compute node.
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-python3-openstackclient is already the newest version (5.8.0-0ubuntu1).
-0 upgraded, 0 newly installed, 0 to remove and 14 not upgraded.
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-0 upgraded, 0 newly installed, 2 reinstalled, 0 to remove and 14 not upgraded.
-Need to get 75.4 kB of archives.
-After this operation, 0 B of additional disk space will be used.
-Get:1 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 nova-common all 3:25.2.0-0ubuntu1 [66.8 kB]
-Get:2 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 nova-compute all 3:25.2.0-0ubuntu1 [8,608 B]
-Fetched 75.4 kB in 1s (62.4 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 91099 files and directories currently installed.)
-Preparing to unpack .../nova-common_3%3a25.2.0-0ubuntu1_all.deb ...
-Unpacking nova-common (3:25.2.0-0ubuntu1) over (3:25.2.0-0ubuntu1) ...
-Preparing to unpack .../nova-compute_3%3a25.2.0-0ubuntu1_all.deb ...
-Unpacking nova-compute (3:25.2.0-0ubuntu1) over (3:25.2.0-0ubuntu1) ...
-Setting up nova-compute (3:25.2.0-0ubuntu1) ...
-Setting up nova-common (3:25.2.0-0ubuntu1) ...
-
-Configuration file '/etc/nova/api-paste.ini', does not exist on system.
-Installing new config file as you requested.
-
-Configuration file '/etc/nova/logging.conf', does not exist on system.
-Installing new config file as you requested.
-
-Configuration file '/etc/nova/nova.conf', does not exist on system.
-Installing new config file as you requested.
-
-Configuration file '/etc/nova/rootwrap.conf', does not exist on system.
-Installing new config file as you requested.
-
-Configuration file '/etc/nova/rootwrap.d/compute.filters', does not exist on system.
-Installing new config file as you requested.
-Processing triggers for man-db (2.10.2-1) ...
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-0 upgraded, 0 newly installed, 1 reinstalled, 0 to remove and 14 not upgraded.
-Need to get 2,722 B of archives.
-After this operation, 0 B of additional disk space will be used.
-Get:1 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 nova-compute-qemu all 3:25.2.0-0ubuntu1 [2,722 B]
-Fetched 2,722 B in 2s (1,702 B/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 91099 files and directories currently installed.)
-Preparing to unpack .../nova-compute-qemu_3%3a25.2.0-0ubuntu1_all.deb ...
-Unpacking nova-compute-qemu (3:25.2.0-0ubuntu1) over (3:25.2.0-0ubuntu1) ...
-Setting up nova-compute-qemu (3:25.2.0-0ubuntu1) ...
-
-Configuration file '/etc/nova/nova-compute.conf', does not exist on system.
-Installing new config file as you requested.

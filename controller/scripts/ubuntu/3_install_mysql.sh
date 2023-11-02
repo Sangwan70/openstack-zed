@@ -26,6 +26,9 @@ echo "Will bind MySQL server to $DB_IP."
 
 echo "Sourced MySQL password from credentials: $DATABASE_PASSWORD"
 
+wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
+sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2_amd64.deb
+
 echo "Installing MySQL (MariaDB)."
 sudo apt-get install -y -o DPkg::options::=--force-confmiss --reinstall mysql-common
 sudo apt-get install -y -o DPkg::options::=--force-confmiss --reinstall mariadb-server python3-mysqldb

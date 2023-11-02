@@ -44,4 +44,4 @@ else
 fi
 
 sudo curl -o /etc/swift/proxy-server.conf \
-        https://opendev.org/openstack/swift/raw/branch/stable/wallaby/etc/proxy-server.conf-sample
+	https://opendev.org/openstack/swift/raw/branch/stable/zed/etc/proxy-server.conf-sample

@@ -74,6 +74,9 @@ iniset_sudo $conf nova password "$NOVA_PASS"
 # lock_path, not in install-guide:
 iniset_sudo $conf oslo_concurrency lock_path /var/lib/neutron/tmp
 
+# Linuxbridge in experimental section.  Not in install-guide:
+iniset_sudo $conf experimental linuxbridge true
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Configure the Modular Layer 2 (ML2) plug-in
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -104,7 +107,7 @@ conf=/etc/neutron/plugins/ml2/linuxbridge_agent.ini
 
 # Edit the [linux_bridge] section.
 set_iface_list
-PUBLIC_INTERFACE_NAME=$(ifnum_to_ifname 2)
+PUBLIC_INTERFACE_NAME=$(ifnum_to_ifname 1)
 echo "PUBLIC_INTERFACE_NAME=$PUBLIC_INTERFACE_NAME"
 iniset_sudo $conf linux_bridge physical_interface_mappings provider:$PUBLIC_INTERFACE_NAME
 

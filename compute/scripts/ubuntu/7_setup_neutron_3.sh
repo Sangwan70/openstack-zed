@@ -25,7 +25,7 @@ conf=/etc/neutron/plugins/ml2/linuxbridge_agent.ini
 
 # Edit the [linux_bridge] section.
 set_iface_list
-PUBLIC_INTERFACE_NAME=$(ifnum_to_ifname 2)
+PUBLIC_INTERFACE_NAME=$(ifnum_to_ifname 1)
 echo "PUBLIC_INTERFACE_NAME=$PUBLIC_INTERFACE_NAME"
 iniset_sudo $conf linux_bridge physical_interface_mappings provider:$PUBLIC_INTERFACE_NAME
 

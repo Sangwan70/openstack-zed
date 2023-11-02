@@ -51,9 +51,9 @@ case "$OPENSTACK_RELEASE" in
         REPO=cloud-archive:wallaby
         SRC_FILE=cloudarchive-wallaby.list
         ;;
-    xena)
-        REPO=cloud-archive:xena
-        SRC_FILE=cloudarchive-xena.list
+    zed)
+        REPO=cloud-archive:zed
+        SRC_FILE=cloudarchive-zed.list
         ;;
     *)
         echo >&2 "Unknown OpenStack release: $OPENSTACK_RELEASE. Aborting."

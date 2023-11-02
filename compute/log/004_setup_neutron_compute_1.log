@@ -1,66 +1,0 @@
-Installing networking components for compute node.
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-0 upgraded, 0 newly installed, 2 reinstalled, 0 to remove and 14 not upgraded.
-Need to get 44.1 kB of archives.
-After this operation, 0 B of additional disk space will be used.
-Get:1 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 neutron-common all 2:20.4.0-0ubuntu1 [38.4 kB]
-Get:2 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 neutron-linuxbridge-agent all 2:20.4.0-0ubuntu1 [5,740 B]
-Fetched 44.1 kB in 1s (61.3 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 91099 files and directories currently installed.)
-Preparing to unpack .../neutron-common_2%3a20.4.0-0ubuntu1_all.deb ...
-Unpacking neutron-common (2:20.4.0-0ubuntu1) over (2:20.4.0-0ubuntu1) ...
-Preparing to unpack .../neutron-linuxbridge-agent_2%3a20.4.0-0ubuntu1_all.deb ...
-Unpacking neutron-linuxbridge-agent (2:20.4.0-0ubuntu1) over (2:20.4.0-0ubuntu1) ...
-Setting up neutron-common (2:20.4.0-0ubuntu1) ...
-
-Configuration file '/etc/neutron/api-paste.ini', does not exist on system.
-Installing new config file as you requested.
-
-Configuration file '/etc/neutron/dhcp_agent.ini', does not exist on system.
-Installing new config file as you requested.
-
-Configuration file '/etc/neutron/l3_agent.ini', does not exist on system.
-Installing new config file as you requested.
-
-Configuration file '/etc/neutron/metadata_agent.ini', does not exist on system.
-Installing new config file as you requested.
-
-Configuration file '/etc/neutron/metering_agent.ini', does not exist on system.
-Installing new config file as you requested.
-
-Configuration file '/etc/neutron/neutron.conf', does not exist on system.
-Installing new config file as you requested.
-
-Configuration file '/etc/neutron/neutron_ovn_metadata_agent.ini', does not exist on system.
-Installing new config file as you requested.
-
-Configuration file '/etc/neutron/ovn.ini', does not exist on system.
-Installing new config file as you requested.
-
-Configuration file '/etc/neutron/plugins/ml2/linuxbridge_agent.ini', does not exist on system.
-Installing new config file as you requested.
-
-Configuration file '/etc/neutron/plugins/ml2/macvtap_agent.ini', does not exist on system.
-Installing new config file as you requested.
-
-Configuration file '/etc/neutron/plugins/ml2/ml2_conf.ini', does not exist on system.
-Installing new config file as you requested.
-
-Configuration file '/etc/neutron/plugins/ml2/openvswitch_agent.ini', does not exist on system.
-Installing new config file as you requested.
-
-Configuration file '/etc/neutron/plugins/ml2/sriov_agent.ini', does not exist on system.
-Installing new config file as you requested.
-
-Configuration file '/etc/neutron/rootwrap.conf', does not exist on system.
-Installing new config file as you requested.
-
-Configuration file '/etc/neutron/rootwrap.d/rootwrap.filters', does not exist on system.
-Installing new config file as you requested.
-Setting up neutron-linuxbridge-agent (2:20.4.0-0ubuntu1) ...
-Processing triggers for man-db (2.10.2-1) ...
