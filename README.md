@@ -11,8 +11,8 @@
 | Memcached Swift Proxy |  |    Swift-Container    |  |                       |
 | Keystone  httpd       |  |      Swift-Object     |  |                       |
 +-----------------------+  +-----------------------+  +-----------------------+
-    enp0s10|NAT                 enp0s10|NAT                 enp0s10|NAT 
-    enp0s9|Unconfigured         enp0s9|Unconfigured         enp0s9|Unconfigured
+    enp0s9|NAT                 enp0s9|NAT                 enp0s9|NAT 
+    enp0s8|Unconfigured         enp0s8|Unconfigured         enp0s8|Unconfigured
 
 ```
 Create three Virtual Machines in Oracle VM Virtual Box as given in the diagrame above and set networking.
