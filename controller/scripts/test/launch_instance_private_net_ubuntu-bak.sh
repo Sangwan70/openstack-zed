@@ -16,14 +16,13 @@ indicate_current_auto
 
 # On Linux, turning on masquerading may look something like this:
 
-sudo modprobe br_netfilter
 sudo echo "1" > sudo /proc/sys/net/ipv4/ip_forward
 sudo modprobe ip_tables
 sudo modprobe ip_conntrack
-sudo iptables -t nat -A POSTROUTING -o enp0s8 -j MASQUERADE
-sudo iptables -A FORWARD -i enp0s8 -o enp0s9 -m state \
+sudo iptables -t nat -A POSTROUTING -o enp0s9 -j MASQUERADE
+sudo iptables -A FORWARD -i enp0s9 -o enp0s3 -m state \
           --state RELATED,ESTABLISHED -j ACCEPT
-sudo iptables -A FORWARD -i enp0s9 -o enp0s8 -j ACCEPT
+sudo iptables -A FORWARD -i enp0s3 -o enp0s9 -j ACCEPT
 
 # Set this true if you have masquerading enabled to allow instance VMs access
 # to the Internet.
@@ -33,7 +32,7 @@ sudo iptables -A FORWARD -i enp0s9 -o enp0s8 -j ACCEPT
 # server. The default uses dnsmasq running on a node.
 : ${EXT_DNS:=true}
 
-DEMO_INSTANCE_NAME=tsp-instance
+DEMO_INSTANCE_NAME=private-instance
 
 echo "SUM --- BEGIN"
 
@@ -722,17 +721,17 @@ function patient_ping {
         sleep 1
 
         # Ping the instance VM every ten seconds
-        if [[ $((cnt % 20)) -eq 0 ]]; then
-            if ping -c5 "$ip" > /dev/null ; then
+        if [[ $((cnt % 10)) -eq 0 ]]; then
+            if ping -c1 "$ip" > /dev/null ; then
                 echo
-                ping -c5 "$ip"
+                ping -c1 "$ip"
                 echo "SUM ping instance VM after $cnt seconds."
                 break
             fi
         fi
 
         # Abort if it takes too long
-        if [[ $cnt -gt 300 ]]; then
+        if [[ $cnt -gt 180 ]]; then
             echo
             echo "SUM ERROR no ping for instance VM in $cnt seconds. Aborting."
             exit 1

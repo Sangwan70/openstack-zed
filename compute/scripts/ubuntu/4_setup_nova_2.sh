@@ -57,7 +57,7 @@ iniset_sudo $conf vnc server_proxyclient_address '$my_ip'
 iniset_sudo $conf vnc novncproxy_base_url http://"$(hostname_to_ip controller)":6080/vnc_auto.html
 
 # Configure [glance] section.
-iniset_sudo $conf glance api_servers http://controller:9292
+# iniset_sudo $conf glance api_servers http://controller:9292
 
 # Configure [oslo_concurrency] section.
 iniset_sudo $conf oslo_concurrency lock_path /var/lib/nova/tmp
@@ -138,14 +138,6 @@ echo "Verifying operation of the Compute service."
 
 echo "openstack compute service list"
 openstack compute service list
-
-echo "List API endpoints to verify connectivity with the Identity service."
-echo "openstack catalog list"
-openstack catalog list
-
-echo "Listing images to verify connectivity with the Image service."
-echo "openstack image list"
-openstack image list
 
 echo "Checking the cells and placement API are working successfully."
 echo "on controller node: nova-status upgrade check"

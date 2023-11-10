@@ -31,7 +31,7 @@ echo "Configuring RabbitMQ message queue access."
 iniset_sudo $conf DEFAULT transport_url "rabbit://openstack:$RABBIT_PASS@controller"
 
 # Configuring [api] section.
-iniset_sudo $conf api auth_strategy keystone
+# iniset_sudo $conf api auth_strategy keystone
 
 nova_admin_user=nova
 
@@ -62,7 +62,7 @@ iniset_sudo $conf vnc server_proxyclient_address '$my_ip'
 iniset_sudo $conf vnc novncproxy_base_url http://"$(hostname_to_ip controller)":6080/vnc_auto.html
 
 # Configure [glance] section.
-iniset_sudo $conf glance api_servers http://controller:9292
+# iniset_sudo $conf glance api_servers http://controller:9292
 
 # Configure [oslo_concurrency] section.
 iniset_sudo $conf oslo_concurrency lock_path /var/lib/nova/tmp

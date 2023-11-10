@@ -48,14 +48,6 @@ echo "Verifying operation of the Compute service."
 echo "openstack compute service list"
 openstack compute service list
 
-echo "List API endpoints to verify connectivity with the Identity service."
-echo "openstack catalog list"
-openstack catalog list
-
-echo "Listing images to verify connectivity with the Image service."
-echo "openstack image list"
-openstack image list
-
 echo "Checking the cells and placement API are working successfully."
 echo "on controller node: nova-status upgrade check"
 node_ssh controller "sudo nova-status upgrade check"
