@@ -40,6 +40,7 @@ iniset_sudo $conf database connection "$database_url"
 # Configure [DEFAULT] section.
 iniset_sudo $conf DEFAULT core_plugin ml2
 iniset_sudo $conf DEFAULT service_plugins router
+iniset_sudo $conf DEFAULT allow_overlapping_ips False
 
 echo "Configuring RabbitMQ message queue access."
 iniset_sudo $conf DEFAULT transport_url "rabbit://openstack:$RABBIT_PASS@controller"
@@ -124,7 +125,7 @@ iniset_sudo $conf securitygroup firewall_driver neutron.agent.linux.iptables_fir
 echo "Ensuring that the kernel supports network bridge filters."
 if ! sudo sysctl net.bridge.bridge-nf-call-iptables; then
     sudo modprobe br_netfilter
-    echo "# bridge support module added by training-labs" >> /etc/modules
+    echo "# bridge support module added by Ram N Sangwan" >> /etc/modules
     echo br_netfilter >> /etc/modules
 fi
 
@@ -145,6 +146,7 @@ conf=/etc/neutron/dhcp_agent.ini
 iniset_sudo $conf DEFAULT interface_driver linuxbridge
 iniset_sudo $conf DEFAULT dhcp_driver neutron.agent.linux.dhcp.Dnsmasq
 iniset_sudo $conf DEFAULT enable_isolated_metadata true
+iniset_sudo $conf DEFAULT use_namespaces False
 
 # Not in install-guide:
 iniset_sudo $conf DEFAULT dnsmasq_config_file /etc/neutron/dnsmasq-neutron.conf

@@ -27,6 +27,7 @@ iniset_sudo $conf DEFAULT transport_url "rabbit://openstack:$RABBIT_PASS@control
 
 # Configuring [DEFAULT] section
 iniset_sudo $conf DEFAULT auth_strategy keystone
+iniset_sudo $conf DEFAULT allow_overlapping_ips False
 
 neutron_admin_user=neutron
 

@@ -42,6 +42,6 @@ iniset_sudo $conf securitygroup firewall_driver neutron.agent.linux.iptables_fir
 echo "Ensuring that the kernel supports network bridge filters."
 if ! sudo sysctl net.bridge.bridge-nf-call-iptables; then
     sudo modprobe br_netfilter
-    echo "# bridge support module added by training-labs" >> /etc/modules
+    echo "# bridge support module added by The SkillPedia" >> /etc/modules
     echo br_netfilter >> /etc/modules
 fi
