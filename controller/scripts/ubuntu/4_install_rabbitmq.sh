@@ -17,7 +17,10 @@ indicate_current_auto
 #-------------------------------------------------------------------------------
 
 echo "Installing RabbitMQ."
-sudo apt install -y rabbitmq-server
+sudo apt install -y rabbitmq-server python3-pymysql
+sudo systemctl restart mariadb rabbitmq-server
+
+sudo rabbitmqctl add_user openstack "$RABBIT_PASS"
 
 echo -n "Waiting for RabbitMQ to start."
 until sudo rabbitmqctl status >/dev/null; do

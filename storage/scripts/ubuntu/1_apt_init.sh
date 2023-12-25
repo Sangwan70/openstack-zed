@@ -47,9 +47,9 @@ echo "Installing packages needed for add-apt-repository."
 sudo apt -y install software-properties-common
 
 case "$OPENSTACK_RELEASE" in
-    wallaby)
-        REPO=cloud-archive:wallaby
-        SRC_FILE=cloudarchive-wallaby.list
+    yoga)
+        REPO=cloud-archive:yoga
+        SRC_FILE=cloudarchive-yoga.list
         ;;
     zed)
         REPO=cloud-archive:zed

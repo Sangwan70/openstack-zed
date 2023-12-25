@@ -71,9 +71,9 @@ sudo systemctl status rsync.service
 
 sudo mkdir -p /etc/swift
 
-sudo curl -o /etc/swift/account-server.conf https://opendev.org/openstack/swift/raw/branch/stable/zed/etc/account-server.conf-sample
-sudo curl -o /etc/swift/container-server.conf https://opendev.org/openstack/swift/raw/branch/stable/zed/etc/container-server.conf-sample
-sudo curl -o /etc/swift/object-server.conf https://opendev.org/openstack/swift/raw/branch/stable/zed/etc/object-server.conf-sample
+sudo curl -o /etc/swift/account-server.conf https://opendev.org/openstack/swift/raw/branch/stable/yoga/etc/account-server.conf-sample
+sudo curl -o /etc/swift/container-server.conf https://opendev.org/openstack/swift/raw/branch/stable/yoga/etc/container-server.conf-sample
+sudo curl -o /etc/swift/object-server.conf https://opendev.org/openstack/swift/raw/branch/stable/yoga/etc/object-server.conf-sample
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Edit the /etc/swift/account-server.conf file.
