@@ -27,5 +27,5 @@ echo "Installing the supporting utility packages."
 sudo apt install -y -o DPkg::options::=--force-confmiss --reinstall lvm2 thin-provisioning-tools
 
 echo "Installing cinder."
-sudo apt install -y -o DPkg::options::=--force-confmiss --reinstall cinder-common cinder-volume
+sudo apt install -y -o DPkg::options::=--force-confmiss --reinstall cinder-common cinder-volume cinder-backup nfs-common nfs-util nfs-kernel-server
 

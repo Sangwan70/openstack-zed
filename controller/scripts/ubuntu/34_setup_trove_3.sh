@@ -15,6 +15,7 @@ indicate_current_auto
 # Wait for keystone to come up
 wait_for_keystone
 
+TROVE_VOL=trove-volume
 #------------------------------------------------------------------------------
 # Install the Database Service (trove)
 #------------------------------------------------------------------------------
@@ -27,10 +28,16 @@ source "$CONFIG_DIR/admin-openstackrc.sh"
 #------------------------------------------------------------------------------
 
 echo
-echo "Creating openstack volume type as specified in the Config File.."
+echo "Creating openstack volume type needed.."
 echo
 
-openstack volume type create lvmdriver-1 --public
+if [ $(openstack volume type list | grep 'trove' | awk '{print $4}') == "$TROVE_VOL" ]
+then 
+  echo "Openstack Volume type already exists. Continuing"
+else
+  openstack volume type create $TROVE_VOL --public
+fi
+
 
 trove_admin_user=trove
 
@@ -55,7 +62,7 @@ iniset_sudo $conf database connection "$database_url"
 echo "Configuring RabbitMQ message queue access."
 iniset_sudo $conf DEFAULT transport_url "rabbit://openstack:$RABBIT_PASS@controller"
 iniset_sudo $conf DEFAULT network_driver trove.network.neutron.NeutronDriver
-iniset_sudo $conf DEFAULT cinder_volume_type lvmdriver-1
+iniset_sudo $conf DEFAULT cinder_volume_type $TROVE_VOL
 iniset_sudo $conf DEFAULT default_datastore mysql
 iniset_sudo $conf DEFAULT nova_keypair trove-mgmt
 iniset_sudo $conf DEFAULT taskmanager_manager trove.taskmanager.manager.Manager
@@ -121,9 +128,15 @@ sudo su -s /bin/bash -c "trove-manage db_sync"
 
 
 echo "Creating the Cloud Init Scripts"
-sudo mkdir /etc/trove/cloudinit
 
-cat << CINIT | sudo tee -a /etc/trove/cloudinit/mariadb.cloudinit
+CLOUDINIT="/etc/trove/cloudinit/"
+if [ ! -d "$CLOUDINIT" ]
+then
+sudo rm -rf "$CLOUDINIT" 
+fi
+
+sudo mkdir $CLOUDINIT
+cat << CINIT | sudo tee -a $CLOUDINIT/mariadb.cloudinit
 # Use Keystone V3 API for dashboard login.
 runcmd:
   - echo 'CONTROLLER=controller' > /etc/trove/controller.conf
@@ -134,7 +147,8 @@ CINIT
 sudo cp /etc/trove/cloudinit/mariadb.cloudinit /etc/trove/cloudinit/postgresql.cloudinit
 sudo cp /etc/trove/cloudinit/mariadb.cloudinit /etc/trove/cloudinit/mysql.cloudinit
 
-sudo chown -R trove /etc/trove/cloudinit
+sudo chgrp -R trove /etc/trove/
+sudo chmod 775 -R /etc/trove/
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Finalize installation
@@ -144,6 +158,7 @@ echo "Restarting trove services."
 STARTTIME=$(date +%s)
 sudo systemctl restart trove-api trove-taskmanager trove-conductor
 sudo systemctl enable trove-api trove-taskmanager trove-conductor
+sudo systemctl status trove-api trove-taskmanager trove-conductor
 
 sudo systemctl restart apache2
 
@@ -156,9 +171,4 @@ done
 ENDTIME=$(date +%s)
 echo "Restarting trove servies took $((ENDTIME - STARTTIME)) seconds."
 
-#------------------------------------------------------------------------------
-# Verify operation
-#------------------------------------------------------------------------------
-
-echo "Listing service components."
 openstack database service list

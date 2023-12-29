@@ -22,9 +22,10 @@ wait_for_keystone
 
 echo "Dwnloading Image for Ubuntu 22.04"
 echo
-
-wget https://tarballs.opendev.org/openstack/trove/images/trove-master-guest-ubuntu-jammy.qcow2
-
+if [ ! -f 'trove-master-guest-ubuntu-jammy.qcow2' ]
+then
+	wget https://tarballs.opendev.org/openstack/trove/images/trove-master-guest-ubuntu-jammy.qcow2
+fi
 #------------------------------------------------------------------------------
 # Creating Trove-Ubuntu openstack Image from the downloaded file
 #------------------------------------------------------------------------------
@@ -105,4 +106,4 @@ echo "PostgresSQL.."
 
 openstack datastore version list postgresql
 
-echo "Script Execution Completed Successfully!""
+echo "Script Execution Completed Successfully!"

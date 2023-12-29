@@ -24,6 +24,14 @@ echo "IP address of this node's interface in management network: $MY_MGMT_IP."
 # Verify Cinder operation
 #------------------------------------------------------------------------------
 
+sudo touch /etc/exports
+
+echo "/var/lib/nfs-share 10.10.0.0/24(rw,no_root_squash,no_subtree_check)" | sudo tee -a /etc/exports
+sudo systemctl enable --now nfs-server
+sudo systemctl status nfs-server
+
+exit 0
+
 echo "Verifying Block Storage installation on controller node."
 
 echo "Sourcing the admin credentials."
@@ -129,3 +137,5 @@ node_ssh controller "$AUTH; openstack volume delete volume2"
 
 echo "openstack volume list"
 node_ssh controller "$AUTH; openstack volume list"
+
+

@@ -81,7 +81,7 @@ echo "Configuring 'default' as the default domain for users created via " \
 iniset_sudo_no_section $conf "OPENSTACK_KEYSTONE_DEFAULT_DOMAIN" '"Default"'
 
 echo "Configuring 'user' as the default role for users created via dashboard."
-iniset_sudo_no_section $conf "OPENSTACK_KEYSTONE_DEFAULT_ROLE" '"user"'
+iniset_sudo_no_section $conf "OPENSTACK_KEYSTONE_DEFAULT_ROLE" '"admin"'
 
 # Here, we would disable layer-3 networking servies for networking option 1.
 
