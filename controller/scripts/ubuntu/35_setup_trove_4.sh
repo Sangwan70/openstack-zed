@@ -36,6 +36,8 @@ echo
 
 openstack image create Trove-Ubuntu --file=trove-master-guest-ubuntu-jammy.qcow2 --disk-format=qcow2 --container-format=bare --tag=trove --public
 
+sudo rm -rf trove-master-guest-ubuntu-jammy.qcow2
+
 #------------------------------------------------------------------------------
 # Adding MariaDB, MySQL and PostgreSQL to the Datastore
 #------------------------------------------------------------------------------
@@ -43,9 +45,9 @@ openstack image create Trove-Ubuntu --file=trove-master-guest-ubuntu-jammy.qcow2
 echo "Sourcing the admin credentials."
 source "$CONFIG_DIR/admin-openstackrc.sh"
 
-sudo su -s /bin/bash -c "trove-manage datastore_update mariadb ''"
-sudo su -s /bin/bash -c "trove-manage datastore_update mysql ''"
-sudo su -s /bin/bash -c "trove-manage datastore_update postgresql ''"
+sudo su -s /bin/bash -c "trove-manage datastore_update mariadb ''" trove
+sudo su -s /bin/bash -c "trove-manage datastore_update mysql ''" trove
+sudo su -s /bin/bash -c "trove-manage datastore_update postgresql ''" trove
 
 #------------------------------------------------------------------------------
 # Updating Trove Database for Multiple Versions of MariaDB, MySQL and PostgreSQL
@@ -63,22 +65,26 @@ echo
 echo "Updating Trove Database for Multiple Versions of MariaDB, MySQL and PostgreSQL"
 echo
 
-sudo su -s /bin/sh -c "trove-manage datastore_version_update mariadb 10.2 mariadb $imgID mariadb 1"
-sudo su -s /bin/sh -c "trove-manage datastore_version_update mariadb 10.3 mariadb $imgID mariadb 1"
-sudo su -s /bin/sh -c "trove-manage datastore_version_update mysql 5.7 mysql $imgID mysql 1"
-sudo su -s /bin/sh -c "trove-manage datastore_version_update postgresql 10 postgresql $imgID postgresql 1"
-sudo su -s /bin/sh -c "trove-manage datastore_version_update postgresql 12 postgresql $imgID postgresql 1"
+sudo su -s /bin/sh trove -c "trove-manage datastore_version_update mariadb 10.2 mariadb $imgID mariadb 1"
+sudo su -s /bin/sh trove -c "trove-manage datastore_version_update mariadb 10.3 mariadb $imgID mariadb 1"
+sudo su -s /bin/sh trove -c "trove-manage datastore_version_update mariadb 10.6 mariadb $imgID mariadb 1"
+sudo su -s /bin/sh trove -c "trove-manage datastore_version_update mysql 5.7 mysql $imgID mysql 1"
+sudo su -s /bin/sh trove -c "trove-manage datastore_version_update mysql 8.0 mysql $imgID mysql 1"
+sudo su -s /bin/sh trove -c "trove-manage datastore_version_update postgresql 10 postgresql $imgID postgresql 1"
+sudo su -s /bin/sh trove -c "trove-manage datastore_version_update postgresql 12 postgresql $imgID postgresql 1"
 
 #------------------------------------------------------------------------------
 # Setting Database Options for Multiple Versions of MariaDB, MySQL and PostgreSQL
 #------------------------------------------------------------------------------
 
 # Setting Database Options for Multiple Versions of MariaDB, MySQL and PostgreSQL
-sudo su -s /bin/bash -c "trove-manage db_load_datastore_config_parameters mariadb 10.2 /usr/lib/python3/dist-packages/trove/templates/mariadb/validation-rules.json"
-sudo su -s /bin/bash -c "trove-manage db_load_datastore_config_parameters mariadb 10.3 /usr/lib/python3/dist-packages/trove/templates/mariadb/validation-rules.json"
-sudo su -s /bin/bash -c "trove-manage db_load_datastore_config_parameters mysql 5.7 /usr/lib/python3/dist-packages/trove/templates/mysql/validation-rules.json"
-sudo su -s /bin/bash -c "trove-manage db_load_datastore_config_parameters postgresql 10 /usr/lib/python3/dist-packages/trove/templates/postgresql/validation-rules.json"
-sudo su -s /bin/bash -c "trove-manage db_load_datastore_config_parameters postgresql 12 /usr/lib/python3/dist-packages/trove/templates/postgresql/validation-rules.json"
+sudo su -s /bin/bash trove -c "trove-manage db_load_datastore_config_parameters mariadb 10.2 /usr/lib/python3/dist-packages/trove/templates/mariadb/validation-rules.json"
+sudo su -s /bin/bash trove -c "trove-manage db_load_datastore_config_parameters mariadb 10.3 /usr/lib/python3/dist-packages/trove/templates/mariadb/validation-rules.json"
+sudo su -s /bin/bash trove -c "trove-manage db_load_datastore_config_parameters mariadb 10.6 /usr/lib/python3/dist-packages/trove/templates/mariadb/validation-rules.json"
+sudo su -s /bin/bash trove -c "trove-manage db_load_datastore_config_parameters mysql 5.7 /usr/lib/python3/dist-packages/trove/templates/mysql/validation-rules.json"
+sudo su -s /bin/bash trove -c "trove-manage db_load_datastore_config_parameters mysql 8.0 /usr/lib/python3/dist-packages/trove/templates/mysql/validation-rules.json"
+sudo su -s /bin/bash trove -c "trove-manage db_load_datastore_config_parameters postgresql 10 /usr/lib/python3/dist-packages/trove/templates/postgresql/validation-rules.json"
+sudo su -s /bin/bash trove -c "trove-manage db_load_datastore_config_parameters postgresql 12 /usr/lib/python3/dist-packages/trove/templates/postgresql/validation-rules.json"
 
 #------------------------------------------------------------------------------
 # Verifying Databases in the Datastore of Trove

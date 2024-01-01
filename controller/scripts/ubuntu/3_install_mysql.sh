@@ -26,11 +26,20 @@ echo "Will bind MySQL server to $DB_IP."
 
 echo "Sourced MySQL password from credentials: $DATABASE_PASSWORD"
 
-if [ ! -f "libssl1.1_1.1.1f-1ubuntu2_amd64.deb" ]; then
+if [ "$(uname -m)" = "x86_64" ]; then
+    if [ ! -f "libssl1.1_1.1.1f-1ubuntu2_amd64.deb" ]; then
      wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
+   fi
+    sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2_amd64.deb
+    rm libssl1.1_1.1.1f-1ubuntu2_amd64.deb
+elif [ "$(uname -m)" = "aarch64" ]; then
+   if [ ! -f "libssl1.1_1.1.1f-1ubuntu2_arm64.deb" ]; then
+     wget http://ports.ubuntu.com/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_arm64.deb
+   fi
+   sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2_arm64.deb
+   rm libssl1.1_1.1.1f-1ubuntu2_arm64.deb
 fi
 
-sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2_amd64.deb
 
 echo "Installing MySQL (MariaDB)."
 sudo apt-get install -y -o DPkg::options::=--force-confmiss --reinstall mysql-common

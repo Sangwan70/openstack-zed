@@ -1,11 +1,13 @@
 # This file contains OpenStack configuration data. 
-# zed                (production release; cloud-archive:train)
-# yoga                 (pre-release testing: cloud-archive:train-proposed)
-: ${OPENSTACK_RELEASE:=yoga}
+# bobcat                  (production release; cloud-archive:bobcat)
+# caracal                 (pre-release testing: cloud-archive:caracal)
+: ${OPENSTACK_RELEASE:=bobcat}
 
 # CirrOS image URL
 if [ "$(uname -m)" = "x86_64" ]; then
     arch=x86_64
+elif [ "$(uname -m)" = "aarch64" ]; then
+    arch=aarch64
 else
     arch=i386
 fi
@@ -42,4 +44,3 @@ NETWORK_1="provider 10.10.1.0"
 
 : ${REGION:=RegionOne}
 
-# vim: set ai ts=4 sw=4 et ft=sh:

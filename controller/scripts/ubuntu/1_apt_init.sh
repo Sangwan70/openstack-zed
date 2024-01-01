@@ -50,13 +50,17 @@ echo "Installing packages needed for add-apt-repository."
 sudo apt -y install software-properties-common
 
 case "$OPENSTACK_RELEASE" in
+    bobcat)
+        REPO=cloud-archive:bobcat
+        SRC_FILE=cloudarchive-bobcat.list
+        ;;
+    caracal)
+        REPO=cloud-archive:caracal
+        SRC_FILE=cloudarchive-caracal.list
+        ;;
     zed)
         REPO=cloud-archive:zed
         SRC_FILE=cloudarchive-zed.list
-        ;;
-    yoga)
-        REPO=cloud-archive:yoga
-        SRC_FILE=cloudarchive-yoga.list
         ;;
     *)
         echo >&2 "Unknown OpenStack release: $OPENSTACK_RELEASE. Aborting."

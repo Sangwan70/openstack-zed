@@ -171,4 +171,3 @@ done
 ENDTIME=$(date +%s)
 echo "Restarting trove servies took $((ENDTIME - STARTTIME)) seconds."
 
-openstack database service list
